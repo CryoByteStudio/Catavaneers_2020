@@ -67,9 +67,7 @@ public class CharacterControl : MonoBehaviour
     */
     void PickUpPart(Collider c)
     {
-        collider_part = c.gameObject.name;
-        c.gameObject.GetComponent<Transform>().parent = attach_tf.transform;
-        c.gameObject.GetComponent<Transform>().transform.position = attach_tf.transform.position;
+        c.GetComponent<Part>().AttachTo(transform.GetChild(0));
         has_object = true;
     }
 }
