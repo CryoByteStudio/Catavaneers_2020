@@ -6,13 +6,18 @@ using UnityEngine.AI;
 public class CharacterControl : MonoBehaviour
 {
     [SerializeField] Transform attach_tf;
+    [SerializeField] bool player_active_bl;
+    [SerializeField] float speed_fl;
 
     public string collider_part;
     public bool has_object;
 
+    Rigidbody RB;
+
     void Start()
     {
         has_object = false;
+        RB = GetComponent<Rigidbody>();
     }
 
     /*
@@ -23,9 +28,37 @@ public class CharacterControl : MonoBehaviour
     */
     void Update()
     {
+        //in case we like to use it
+        //movement_clickToMove();
+
+        if(player_active_bl) movement_arrowKeys();
+    }
+
+    private void movement_clickToMove()
+    {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
             Move();
+        }
+    }
+
+    private void movement_arrowKeys()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position += Vector3.left * speed_fl * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position += Vector3.right * speed_fl * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.position += Vector3.forward * speed_fl * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position += Vector3.forward * -speed_fl * Time.deltaTime;
         }
     }
 
