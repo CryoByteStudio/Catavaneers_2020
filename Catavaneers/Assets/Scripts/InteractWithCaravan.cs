@@ -31,14 +31,14 @@ public class InteractWithCaravan : MonoBehaviour
 
             caravan = caravan_tf.GetComponentInParent<Caravan>();
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (char_control.has_object)
                 {
                     AddToCaravan();
                 }
             }
-            else if (Input.GetKey(KeyCode.R))
+            else if (Input.GetKeyDown(KeyCode.R))
             {
                 if (!char_control.has_object)
                 {
@@ -59,10 +59,12 @@ public class InteractWithCaravan : MonoBehaviour
     {
         Transform part_tf = caravan.FindPartSlot();
 
-        part_tf.GetComponent<Part>().AttachTo(transform.GetChild(0));
-
-        caravan.parts_tf.RemoveLast();
-        char_control.has_object = true;
+        if (part_tf != null)
+        {
+            part_tf.GetComponent<Part>().Drop();
+            caravan.parts_tf.RemoveLast();
+        }
+        else Debug.Log("No part attached to caravan");
     }
 
     /*

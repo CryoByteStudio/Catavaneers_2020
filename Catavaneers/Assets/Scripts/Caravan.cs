@@ -14,7 +14,7 @@ public class Caravan : MonoBehaviour
     }
 
     /*
-    Purpose:                Get unique transform in the 12 transform children of the caravan using name of object in the argument.
+    Purpose:                Get unique transform in the 12 transform children of the caravan using *** NAME *** of object in the argument.
     Effects:                Return transform child[0] for part_1, transform child[1] for part_2 and so on.
     Input/Output:           Input transform part_tf as argument. Output: 1 of 12 child transform of caravan.
     Global Variables Used:  part_tf (Class InteractWithCaracan), transform (Class Caravan).
@@ -66,11 +66,11 @@ public class Caravan : MonoBehaviour
     /*
     Purpose:                Get transform of the last object in the parts_tf linked list of caravan.
     Effects:                Return transform of the last part in the linked list of parts that are attached to the caravan.
-    Input/Output:           Input N/A. Output part_tf last value.
+    Input/Output:           Input N/A. Output part_tf last value or null.
     Global Variables Used:  part_tf (Class InteractWithCaracan).
     */
     public Transform FindPartSlot()
     {
-        return parts_tf.Last.Value;
+        return (parts_tf.Count > 0) ? parts_tf.Last.Value : null;
     }
 }
