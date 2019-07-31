@@ -13,10 +13,14 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private bool is_night;
     [SerializeField] private int current_day_int;
     [SerializeField] private int max_day_int;
+    [SerializeField] private int wood_count;
+    [SerializeField] private bool is_caravan_whole;
+    [SerializeField] private bool has_caravan_travelled;
 
     private float timer_float;
     private bool is_timer_counting;
     private bool is_done_counting;
+
 
     void Start()
     {
@@ -28,13 +32,13 @@ public class Cycle_Manager : MonoBehaviour
 
     void Update()
     {
-        day_counter_text.text = current_day_int.ToString();
+        day_counter_text.text = "Current Day: " + current_day_int.ToString();
         if(timer_float >= 0.0f && is_timer_counting)
         {
             timer_float -= Time.deltaTime;
             timer_text.text = timer_float.ToString();
         }
-        else if(timer_float <= 0.0f)
+        else if(timer_float <= 0.0f && (is_day || is_night))
         {
             is_done_counting = true;
             is_timer_counting = false;
@@ -44,11 +48,19 @@ public class Cycle_Manager : MonoBehaviour
             {
                 StartNightCycle();
             }
+
             else
             {
                 current_day_int++;
                 StartDayCycle();
             }
+        }
+        if (is_day && is_caravan_whole && wood_count >= 100 && !has_caravan_travelled)
+        {
+            wood_count -= 100;
+            PauseCycle();
+            Debug.Log("caravan traveled");
+            ResumeCycle();
         }
 
     }
@@ -58,6 +70,8 @@ public class Cycle_Manager : MonoBehaviour
         is_day = true;
         is_night = false;
         is_timer_counting = true;
+        timer_float = day_timer_float;
+        has_caravan_travelled = false;
     }
 
     void PauseCycle()
@@ -68,11 +82,18 @@ public class Cycle_Manager : MonoBehaviour
     void ResumeCycle()
     {
         is_timer_counting = true;
+        has_caravan_travelled = true;
     }
 
     void StartNightCycle()
     {
         is_day = false;
         is_night = true;
+        is_timer_counting = true;
+        timer_float = night_timer_float;
+        if (is_night && current_day_int == max_day_int)
+        {
+            Time.timeScale = 0.0f;
+        }
     }
 }
