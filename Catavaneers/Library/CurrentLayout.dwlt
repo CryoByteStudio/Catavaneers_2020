@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1000
-  m_MinSize: {x: 950, y: 522}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 707, y: 472}
   m_MaxSize: {x: 18002, y: 14022}
   vertical: 0
-  controlID: 20
+  controlID: 92
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 472}
   m_MaxSize: {x: 10002, y: 14022}
   vertical: 1
-  controlID: 21
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1160
+  m_LastSelectedObjectID: 11328
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -625,7 +625,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d4280000
     m_LastClickedID: 10452
-    m_ExpandedIDs: 00000000122900002629000040290000
+    m_ExpandedIDs: 0000000020290000342900004e290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,21 +653,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000122900002629000040290000
+    m_ExpandedIDs: ffffffff0000000020290000342900004e290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: InteractWithCaravan
-      m_OriginalName: InteractWithCaravan
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 9822
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -737,23 +737,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 14fbffff
-      m_LastClickedID: -1260
-      m_ExpandedIDs: dafaffffdcfaffffdefaffffe0faffffe2faffffe4faffffe6faffffe8faffffeafaffffecfaffffeefafffff0faffff8efbffffc42b0000ce2b0000
+      m_SelectedIDs: 402c0000
+      m_LastClickedID: 11328
+      m_ExpandedIDs: 86fbffff2c2c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Caravan Parts
-        m_OriginalName: Caravan Parts
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 11242
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
