@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
-    
     /*
     Purpose:                Attach self to provided Transform (in this case, part to caravan).
     Effects:                Part's parent is now caravan and position is the slot's position.
