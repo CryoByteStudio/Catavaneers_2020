@@ -20,6 +20,7 @@ public class Cycle_Manager : MonoBehaviour
     private float timer_float;
     private bool is_timer_counting;
     private bool is_done_counting;
+    public Caravan caravan_s;
 
 
     void Start()
@@ -55,6 +56,10 @@ public class Cycle_Manager : MonoBehaviour
                 StartDayCycle();
             }
         }
+        if(caravan_s.parts_tf.Count == 12)
+        {
+            is_caravan_whole = true;
+        }
         if (is_day && is_caravan_whole && wood_count >= 100 && !has_caravan_travelled)
         {
             wood_count -= 100;
@@ -64,7 +69,12 @@ public class Cycle_Manager : MonoBehaviour
         }
 
     }
-
+    /*
+		Purpose: Starts New Day Cycle.
+		Effects: resets day/ night variables, sets timer to day, starts timer.
+		Input/Output: N/A
+		Global Variables Used:is_day, is_night, is_timer_counting, timer_float, has_caravan_travelled.
+     */
     void StartDayCycle()
     {
         is_day = true;
@@ -74,17 +84,35 @@ public class Cycle_Manager : MonoBehaviour
         has_caravan_travelled = false;
     }
 
+    /*
+    Purpose: Pause Timer to travel caravan.
+    Effects: sets is_timer_counting to false.
+    Input/Output: N/A
+    Global Variables Used: is_timer_counting.
+    */
     void PauseCycle()
     {
         is_timer_counting = false;
     }
 
+    /*
+    Purpose: Resume timer after caravan travelled.
+    Effects: Set is_timer_counting to true, set has_caravan_travelled to false.
+    Input/Output: N/A
+    Global Variables Used: is_timer_counting, has_caravan_travelled.
+    */
     void ResumeCycle()
     {
         is_timer_counting = true;
         has_caravan_travelled = true;
     }
 
+    /*
+    Purpose: Starts night sycle timer
+    Effects: sets all day night variables to night, sets timer to night timer, starts timer, if final day stop TIME.
+    Input/Output: N/A
+    Global Variables Used: is_day, is_night, is_timer_counting, timer_float, night_timer_float, current_day_int, max_day_int.
+    */
     void StartNightCycle()
     {
         is_day = false;
