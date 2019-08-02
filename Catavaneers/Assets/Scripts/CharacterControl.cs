@@ -6,8 +6,12 @@ using UnityEngine.AI;
 public class CharacterControl : MonoBehaviour
 {
     [SerializeField] Transform attach_tf;
-    [SerializeField] bool player_active_bl;
-    [SerializeField] float speed_fl;
+
+    [SerializeField] bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
+    [SerializeField] float speed_fl=10f; // speed of the character
+
+    [SerializeField] string horizontal_ctrl = "Horizontal_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    [SerializeField] string Vertical_ctrl = "Vertical_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
 
     public string collider_part;
     public bool has_object;
@@ -20,12 +24,7 @@ public class CharacterControl : MonoBehaviour
         RB = GetComponent<Rigidbody>();
     }
 
-    /*
-    Purpose:                Move character with mouse click or hold.
-    Effects:                Move to mouse cursor upon click or hold.
-    Input/Output:           Input mouse click. Output N/A.
-    Global Variables Used:  NavMeshAgent.destination.
-    */
+
     void Update()
     {
         //in case we like to use it
@@ -33,6 +32,13 @@ public class CharacterControl : MonoBehaviour
 
         if(player_active_bl) movement_arrowKeys();
     }
+
+    /*
+    Purpose:                Move character with mouse click or hold.
+    Effects:                Move to mouse cursor upon click or hold.
+    Input/Output:           Input mouse click. Output N/A.
+    Global Variables Used:  NavMeshAgent.destination.
+    */
 
     private void movement_clickToMove()
     {
@@ -42,24 +48,21 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
+    /*
+    Purpose:                Move with keystrokes and joysicks.
+    Effects:                Move along the axis acording to the input given.
+    Input/Output:           Input player control axis // Output N/A
+    Global Variables Used:  Raw Axis input
+    */
     private void movement_arrowKeys()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.left * speed_fl * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * speed_fl * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.forward * speed_fl * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += Vector3.forward * -speed_fl * Time.deltaTime;
-        }
+        float h_fl = Input.GetAxis(horizontal_ctrl);
+        transform.position += Vector3.right * speed_fl * h_fl * Time.deltaTime;
+
+        float v_fl = Input.GetAxis(Vertical_ctrl);
+        transform.position += Vector3.forward * speed_fl * v_fl * Time.deltaTime;
+
+
     }
 
     /*
