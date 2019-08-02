@@ -431,6 +431,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &370719081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1496137286, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370719079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ea3deb1e1f5f840b40b653a0d50ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &370719086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -922,8 +934,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer_text: {fileID: 1781395688}
   day_counter_text: {fileID: 2094724195}
-  day_timer_float: 10
-  night_timer_float: 15
+  day_timer_float: 60
+  night_timer_float: 60
   is_day: 1
   is_night: 0
   current_day_int: 1
@@ -931,6 +943,7 @@ MonoBehaviour:
   wood_count: 0
   is_caravan_whole: 0
   has_caravan_travelled: 0
+  caravan_s: {fileID: 370719081}
 --- !u!1 &914271015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8204265048349162897, guid: e96f4e702713ae0418318f6f18f2ee18,
