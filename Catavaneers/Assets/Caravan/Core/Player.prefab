@@ -134,6 +134,8 @@ MonoBehaviour:
   attach_tf: {fileID: 4294453051852353312}
   player_active_bl: 0
   speed_fl: 0
+  horizontal_ctrl: Horizontal_P1
+  Vertical_ctrl: Vertical_P1
   collider_part: 
   has_object: 0
 --- !u!114 &4294453051551149127
@@ -145,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4294453051551149150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12b0d5e614b72504681f9f21804ce098, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a0e82ce90c25b44cbeb5183d0277291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &4294453051551149126
