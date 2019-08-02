@@ -5,15 +5,19 @@ using UnityEngine.AI;
 
 public class CharacterControl : MonoBehaviour
 {
+    #region CORE VARIABLES
     [SerializeField] Transform attach_tf;
 
-    public string collider_part;
+    public string collider_part_string;
     public bool has_object;
+    #endregion
 
+    #region INITIALIZATION
     void Start()
     {
         has_object = false;
     }
+    #endregion
 
     /*
     Purpose:                Move character with mouse click or hold.
@@ -69,5 +73,17 @@ public class CharacterControl : MonoBehaviour
     {
         c.GetComponent<Part>().AttachTo(transform.GetChild(0));
         has_object = true;
+    }
+
+    /*
+    Purpose:                Return int damage.
+    Effects:                Pass on the in damage to other class(es).
+    Input/Output:           Input N/A. Output int damage.
+    Global Variables Used:  N/A.
+    */
+    public int DealDamage()
+    {
+        int damage = 1;
+        return damage;
     }
 }

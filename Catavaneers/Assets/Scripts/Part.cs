@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
-    
     /*
     Purpose:                Attach self to provided Transform (in this case, part to caravan).
     Effects:                Part's parent is now caravan and position is the slot's position.
@@ -51,24 +50,24 @@ public class Part : MonoBehaviour
     }
 
     /*
-    Purpose:                Add rigidbody to object to use Unity physics engine.
-    Effects:                Part now has a rigidbody.
+    Purpose:                Turn off kinematic to lock the object's position.
+    Effects:                Kinematic of rigidbody is turned on.
     Input/Output:           N/A.
     Global Variables Used:  transform (Class Parts).
     */
     void EnablePhysics()
     {
-        transform.gameObject.AddComponent<Rigidbody>();
+        transform.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     /*
-    Purpose:                Remove rigidbody of object to disable physics.
-    Effects:                Rigidbody component is removed from part.
+    Purpose:                Turn on kinematic to unlock the the object's position.
+    Effects:                Kinematic of rigidbody is turned off.
     Input/Output:           N/A.
     Global Variables Used:  transform (Class Parts).
     */
     void DisablePhysics()
     {
-        Destroy(transform.gameObject.GetComponent<Rigidbody>());
+        transform.GetComponent<Rigidbody>().isKinematic = true;
     }
 }
