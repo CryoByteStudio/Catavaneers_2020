@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class InteractWithCaravan : MonoBehaviour
 {
-    #region CORE VARIABLES
-    private Transform caravan_tf;
-    private Transform part_slot_tf;
+    Transform caravan_tf;
+    Transform part_slot_tf;
 
-    private Caravan caravan;
+    Caravan caravan;
 
-    private CharacterControl char_control;
-    #endregion
+    CharacterControl char_control;
 
-    #region INITIALIZATION
     void Start()
     {
         char_control = GetComponent<CharacterControl>();
     }
-    #endregion
 
     /*
     Purpose:                Interact with caravan (Add and Remove Parts).
@@ -49,10 +45,6 @@ public class InteractWithCaravan : MonoBehaviour
                     RemoveFromCaravan();
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AttackCaravan();
-            }
         }
     }
 
@@ -71,7 +63,6 @@ public class InteractWithCaravan : MonoBehaviour
         {
             part_tf.GetComponent<Part>().Drop();
             caravan.parts_tf.RemoveLast();
-            caravan.UpdateHealth();
         }
         else Debug.Log("No part attached to caravan");
     }
@@ -91,18 +82,6 @@ public class InteractWithCaravan : MonoBehaviour
         part_tf.GetComponent<Part>().AttachTo(part_slot_tf);
 
         caravan.parts_tf.AddFirst(part_tf);
-        caravan.UpdateHealth();
         char_control.has_object = false;
-    }
-
-    /*
-    Purpose:                Get damage from character control script and plug it into the take damage method in caravan script.
-    Effects:                Look up TakeDamate(int damage) in Caravan script for effect description
-    Input/Output:           Look up DealDamage() in CharacterControl script and TakeDamage(int damage) in Caravan script for input/output.
-    Global Variables Used:  Look up DealDamage() in CharacterControl script and TakeDamage(int damage) in Caravan script for used variables.
-    */
-    void AttackCaravan()
-    {
-        caravan.TakeDamage(char_control.DealDamage());
     }
 }

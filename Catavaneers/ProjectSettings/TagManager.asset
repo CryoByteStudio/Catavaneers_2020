@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Part
   - Caravan
-  - Slot
   layers:
   - Default
   - TransparentFX
