@@ -2320,5 +2320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: part_slot_2
       objectReference: {fileID: 0}
+    - target: {fileID: 370719086, guid: 212f7f0f9b1df8340a2a41c0f983a1ec, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fc8b4eb1bf2a6f94da638d8fe317990f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 212f7f0f9b1df8340a2a41c0f983a1ec, type: 3}
