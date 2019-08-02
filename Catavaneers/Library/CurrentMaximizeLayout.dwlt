@@ -63,10 +63,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -481
-    m_HBaseRangeMax: 481
-    m_VBaseRangeMin: -189.5
-    m_VBaseRangeMax: 189.5
+    m_HBaseRangeMin: -305.6
+    m_HBaseRangeMax: 305.6
+    m_VBaseRangeMin: -114.4
+    m_VBaseRangeMax: 114.4
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -84,20 +84,20 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 962
-      height: 379
+      width: 764
+      height: 286
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 481, y: 189.5}
+    m_Translation: {x: 382, y: 143}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -481
-      y: -189.5
-      width: 962
-      height: 379
+      x: -382
+      y: -143
+      width: 764
+      height: 286
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
