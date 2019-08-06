@@ -615,6 +615,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &370719085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3059859427072423019, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &370719081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1496137286, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
