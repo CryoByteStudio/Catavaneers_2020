@@ -93,6 +93,8 @@ public class Cycle_Manager : MonoBehaviour
     void PauseCycle()
     {
         is_timer_counting = false;
+        FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + 5, 
+                                                                    FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
     }
 
     /*
