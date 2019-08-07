@@ -319,7 +319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1663052130}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 57.121002, y: 27.266, z: 5.971}
 --- !u!4 &95129863 stripped
 Transform:
@@ -615,12 +615,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &370719085 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3059859427072423019, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 2105285873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &370719081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1496137286, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
@@ -1420,7 +1414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1663052130}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 43.771004, y: 47.631, z: 4.0020003}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -2299,7 +2293,6 @@ Transform:
   m_Children:
   - {fileID: 257403662}
   - {fileID: 681811325}
-  - {fileID: 754127681}
   - {fileID: 45567854}
   - {fileID: 963194228}
   m_Father: {fileID: 0}
@@ -2670,17 +2663,22 @@ PrefabInstance:
     - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3250302008032536534, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
