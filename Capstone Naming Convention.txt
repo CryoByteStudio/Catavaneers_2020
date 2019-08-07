@@ -1,0 +1,51 @@
+Functions: 
+	FunctionName   Capitalize the first letter of every word with no underlines in between.
+		
+	Comments Format: 
+		/*
+		Purpose
+		Effects
+		Input/Output
+		Global Variables Used
+		*/
+
+
+Variables: 
+	all lowercase, underscore seperating each word if multiple.
+	if referencing a script, use s_ at the start of the variable followed by the script name but all in lower case.
+		Example: s_player_controller
+
+	in general, put _(whatever the type of data it is)
+
+		bool: is_facing_left, has_object, etc. (all yes no question)
+		int: speed_int
+		float: speed_float
+		double: speed_double
+		enum: life_states_enum
+
+Numbers: 
+	use the actual digit, do not write out the word.
+		Example: 1,2,3 NOT one, two, three.
+
+GameObjects:  
+	Game object names will all be lower case. Child names must start with the parents name seperated by an underscore.for example player1_rightArm
+	
+	SpawnPoints: Specify for which object the spawn point relates to. 
+		Example: player_spawn_point
+Components:
+	RigidBody: use rgbd for rigidbody variable names,
+		Example: rgbd_2 etc for if you have multiples.
+
+	Transform: use _point at the end to signify transform.
+		Example: cube_point
+
+Scripts:
+
+	Prefix every script with the object it affects, such as enemy, player, weapon, etc.
+	start with a capital, use an underscore and Capital to differentiate each word.
+	Example:  Player_Controller, Enemy_Movement
+
+
+Regions:
+	#Weapon1Reg
+	#EndRegion

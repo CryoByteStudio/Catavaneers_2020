@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Cycle_Manager : MonoBehaviour
 {
+    #region variables
     [SerializeField] private Text timer_text;
     [SerializeField] private Text day_counter_text;
     [SerializeField] private float day_timer_float;
@@ -21,6 +22,7 @@ public class Cycle_Manager : MonoBehaviour
     private bool is_timer_counting;
     private bool is_done_counting;
     public Caravan caravan_s;
+    #endregion
 
 
     void Start()
@@ -93,6 +95,8 @@ public class Cycle_Manager : MonoBehaviour
     void PauseCycle()
     {
         is_timer_counting = false;
+        FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + 5, 
+                                                                    FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
     }
 
     /*
