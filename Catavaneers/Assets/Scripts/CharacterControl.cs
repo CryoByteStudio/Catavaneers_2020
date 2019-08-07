@@ -101,7 +101,7 @@ public class CharacterControl : MonoBehaviour
     Purpose:                Attach object to player's child transform attach_point as child and reposition to attach_point's position.
     Effects:                Part that was picked up is now child of player's child transform attach_point (Player is a grandparent!).
     Input/Output:           Input Collider c. Output N/A.
-    Global Variables Used:  has_object (Class CharacterControl), transform of Collider c's gameObject.
+    Global Variables Used:  has_object (Class CharacterControl), transform of Collider c's gameObject, Player_Inventory.CaravanPart,
     */
     void PickUpPart(Collider c)
     {

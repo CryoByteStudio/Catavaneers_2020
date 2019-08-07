@@ -55,11 +55,11 @@ public class InteractWithCaravan : MonoBehaviour
             /*
             Purpose:                Temporary shop code
             Effects:                Allows Player to buy equipment and bandages from the shop
-            Input/Output:           Keyboard input "D" to deposit wood, "S" to buy a trap, "A" to buy bandages
+            Input/Output:           Keyboard input "T" to deposit wood, "Y" to buy a trap, "U" to buy bandages
             Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
                                     Player_Inventory.Bandage, Caravan_Inventory.bandages
             */
-            else if (Input.GetKeyDown(KeyCode.F))
+            else if (Input.GetKeyDown(KeyCode.T))
             {
                 if (p_inv.wood > 0)
                 {
@@ -67,7 +67,7 @@ public class InteractWithCaravan : MonoBehaviour
                     p_inv.wood = 0;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKeyDown(KeyCode.Y))
             {
                 if (p_inv.GP > 4 && c_inv.traps > 0)
                 {
@@ -89,7 +89,7 @@ public class InteractWithCaravan : MonoBehaviour
                 else if (c_inv.traps < 1)
                     Debug.Log("I'm sorry friend, but it looks like I'm fresh out of stock");
             }
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKeyDown(KeyCode.U))
             {
                 if (p_inv.GP > 0 && c_inv.bandages > 0)
                 {
@@ -125,7 +125,7 @@ public class InteractWithCaravan : MonoBehaviour
     Effects:                Part's parent is now 1 of 12 transforms children of the caravan (caravan is now grandparent!)
     Input/Output:           N/A.
     Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_control (Class InteractWithCaravan), transform, parts_tf (Class Caravan),
-                            transform (Class Part), has_object (Class CharacterControl)
+                            transform (Class Part), has_object (Class CharacterControl), Player_Inventory.CaravanPart,
     */
     void AddToCaravan()
     {
@@ -136,5 +136,6 @@ public class InteractWithCaravan : MonoBehaviour
 
         caravan.parts_tf.AddFirst(part_tf);
         char_control.has_object = false;
+        p_inv.CaravanPart -= 1;
     }
 }
