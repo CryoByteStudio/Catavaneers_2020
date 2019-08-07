@@ -6,12 +6,13 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
 
-    [Range(0.0f, 20.0f)]  public float speedMod_fl = 0f;
-    [Range(0.0f, 200.0f)] public float maxHP_fl = 0f;
+    [Range(10.0f, 30.0f)]  public float speed_mod_fl = 10f;
+    [Range(0.0f, 200.0f)] public float maxHP_fl = 100f;
     [Range(0.0f, 100.0f)] public float damageTaken_fl = 0f;
     [Range(0.0f, 100.0f)] public float damageHealed_fl = 0f;
     [SerializeField] private float currentHP_fl = 0f;
     [Range(0.0f, 100.0f)] public float rotateMod_fl = 0f;
+    private CharacterControl current_char;
 
     private float tempHP;
 
@@ -20,10 +21,8 @@ public class CharacterStats : MonoBehaviour
     {
 
         // At the start, it will change the game objects speed to speed mod.
-        // Currently is used to find Player 1, will be edited later to be for any player.
-        GameObject thePlayer = GameObject.Find("Player_1");
-        CharacterControl currentCharacter = thePlayer.GetComponent<CharacterControl>();
-        currentCharacter.speed_fl += speedMod_fl;
+        current_char = GetComponent<CharacterControl>();
+        
         currentHP_fl = maxHP_fl;
 
     }
@@ -31,6 +30,7 @@ public class CharacterStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        current_char.speed_fl = speed_mod_fl;
         // Currently HP is tied to game model size.
 
         StatMod();
@@ -49,6 +49,7 @@ public class CharacterStats : MonoBehaviour
 
     private void StatMod()
     {
+
         // Hp calculation here
 
         tempHP = maxHP_fl - damageTaken_fl + damageHealed_fl;

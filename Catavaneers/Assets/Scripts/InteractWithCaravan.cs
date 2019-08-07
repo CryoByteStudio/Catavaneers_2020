@@ -59,7 +59,7 @@ public class InteractWithCaravan : MonoBehaviour
             Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
                                     Player_Inventory.Bandage, Caravan_Inventory.bandages
             */
-            else if (Input.GetKeyDown(KeyCode.T))
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 if (p_inv.wood > 0)
                 {
@@ -67,7 +67,7 @@ public class InteractWithCaravan : MonoBehaviour
                     p_inv.wood = 0;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Y))
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 if (p_inv.GP > 4 && c_inv.traps > 0)
                 {
@@ -89,7 +89,7 @@ public class InteractWithCaravan : MonoBehaviour
                 else if (c_inv.traps < 1)
                     Debug.Log("I'm sorry friend, but it looks like I'm fresh out of stock");
             }
-            else if (Input.GetKeyDown(KeyCode.U))
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 if (p_inv.GP > 0 && c_inv.bandages > 0)
                 {
