@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 42070003}
   - component: {fileID: 42070002}
   - component: {fileID: 42070001}
+  - component: {fileID: 42070005}
   m_Layer: 0
   m_Name: Player_4
   m_TagString: Untagged
@@ -253,6 +254,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &42070005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42070000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9045bc64bc714298c41622f69d5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GP: 0
+  wood: 0
+  CaravanPart: 0
+  Trap1: 0
+  Trap2: 0
+  Bandage: 0
+  inventory: 000000000000000000000000000000000000000000000000
 --- !u!1001 &43801306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,7 +431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1663052130}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 57.121002, y: 27.266, z: 5.971}
 --- !u!4 &95129863 stripped
 Transform:
@@ -613,12 +633,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &370719085 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3059859427072423019, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 2105285873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &370719081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1496137286, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
@@ -631,6 +645,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ea3deb1e1f5f840b40b653a0d50ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &370719085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3059859427072423019, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &370719086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1346,7 +1366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1663052130}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 43.771004, y: 47.631, z: 4.0020003}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1774,6 +1794,7 @@ GameObject:
   - component: {fileID: 1418294862}
   - component: {fileID: 1418294861}
   - component: {fileID: 1418294860}
+  - component: {fileID: 1418294868}
   - component: {fileID: 1418294864}
   - component: {fileID: 1418294865}
   - component: {fileID: 1418294866}
@@ -1923,6 +1944,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1418294868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418294859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9045bc64bc714298c41622f69d5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GP: 50
+  wood: 0
+  CaravanPart: 0
+  Trap1: 0
+  Trap2: 0
+  Bandage: 0
+  inventory: 000000000000000000000000000000000000000000000000
 --- !u!1 &1468617193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4190223741562049148, guid: 6b38fdb685866ae4ca33ed469d5d7a27,
@@ -1970,6 +2010,7 @@ GameObject:
   - component: {fileID: 1503429829}
   - component: {fileID: 1503429828}
   - component: {fileID: 1503429827}
+  - component: {fileID: 1503429831}
   m_Layer: 0
   m_Name: Player_3
   m_TagString: Untagged
@@ -2050,6 +2091,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503429831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503429826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9045bc64bc714298c41622f69d5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GP: 0
+  wood: 0
+  CaravanPart: 0
+  Trap1: 0
+  Trap2: 0
+  Bandage: 0
+  inventory: 000000000000000000000000000000000000000000000000
 --- !u!1 &1537904496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,7 +2354,6 @@ Transform:
   m_Children:
   - {fileID: 257403662}
   - {fileID: 681811325}
-  - {fileID: 754127681}
   - {fileID: 45567854}
   - {fileID: 963194228}
   m_Father: {fileID: 0}
@@ -2636,6 +2695,7 @@ GameObject:
   - component: {fileID: 1943046507}
   - component: {fileID: 1943046506}
   - component: {fileID: 1943046505}
+  - component: {fileID: 1943046509}
   m_Layer: 0
   m_Name: Player_2
   m_TagString: Untagged
@@ -2716,6 +2776,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943046509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943046504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9045bc64bc714298c41622f69d5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GP: 0
+  wood: 0
+  CaravanPart: 0
+  Trap1: 0
+  Trap2: 0
+  Bandage: 0
+  inventory: 000000000000000000000000000000000000000000000000
 --- !u!1001 &1953549838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2969,17 +3048,22 @@ PrefabInstance:
     - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059859427072423022, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3250302008032536534, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}

@@ -10,9 +10,12 @@ public class CharacterControl : MonoBehaviour
     public string collider_part;
     public bool has_object;
 
+    Player_Inventory p_inv;
+
     void Start()
     {
         has_object = false;
+        p_inv = GetComponent<Player_Inventory>();
     }
 
     /*
@@ -53,7 +56,7 @@ public class CharacterControl : MonoBehaviour
     */
     void OnTriggerEnter(Collider c)
     {
-        if (!has_object && c.gameObject.tag == "Part")
+        if (!has_object && c.gameObject.tag == "Part" && p_inv.CaravanPart < 1) //Sorry to mess with your Character Controller but i think we agreed on only one part at a time ~Silas
         {
             PickUpPart(c);
         }
@@ -69,5 +72,6 @@ public class CharacterControl : MonoBehaviour
     {
         c.GetComponent<Part>().AttachTo(transform.GetChild(0));
         has_object = true;
+        p_inv.CaravanPart += 1; //I added this for the sake of inventory ~Silas
     }
 }
