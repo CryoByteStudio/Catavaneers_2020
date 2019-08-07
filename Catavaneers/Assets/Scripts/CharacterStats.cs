@@ -23,7 +23,7 @@ public class CharacterStats : MonoBehaviour
         // Currently is used to find Player 1, will be edited later to be for any player.
         GameObject thePlayer = GameObject.Find("Player_1");
         CharacterControl currentCharacter = thePlayer.GetComponent<CharacterControl>();
-        currentCharacter.speed_fl = 10.0f + speedMod_fl;
+        currentCharacter.speed_fl += speedMod_fl;
         currentHP_fl = maxHP_fl;
 
     }
