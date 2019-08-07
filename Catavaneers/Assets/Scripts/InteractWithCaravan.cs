@@ -123,7 +123,7 @@ public class InteractWithCaravan : MonoBehaviour
     Effects:                Part's parent is now 1 of 12 transforms children of the caravan (caravan is now grandparent!)
     Input/Output:           N/A.
     Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_control (Class InteractWithCaravan), transform, parts_tf (Class Caravan),
-                            transform (Class Part), has_object (Class CharacterControl)
+                            transform (Class Part), has_object (Class CharacterControl), Player_Inventory.CaravanPart
     */
     void AddToCaravan()
     {
@@ -134,5 +134,6 @@ public class InteractWithCaravan : MonoBehaviour
 
         caravan.parts_tf.AddFirst(part_tf);
         char_control.has_object = false;
+        p_inv.CaravanPart -= 1;
     }
 }
