@@ -14,14 +14,34 @@ public class CharacterControl : MonoBehaviour
     [SerializeField] string Vertical_ctrl = "Vertical_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
 
     public string collider_part;
-    public bool has_object;
 
     Rigidbody RB;
     Player_Inventory p_inv;
 
+    // Property field
+    /*
+    Purpose:                Finds out if attach point has "Part" object as child.
+    Effects:                Return true if yes and false if no.
+    Input/Output:           Input N/A. Output true/false.
+    Global Variables Used:  No variable was altered.
+    */
+    public bool has_part
+    {
+        get
+        {
+            if (attach_tf.childCount != 0 && attach_tf.GetComponentInChildren<Part>())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
     void Start()
     {
-        has_object = false;
         RB = GetComponent<Rigidbody>();
     }
 
@@ -31,7 +51,7 @@ public class CharacterControl : MonoBehaviour
         //in case we like to use it
         //movement_clickToMove();
 
-        if(player_active_bl) movement_arrowKeys();
+        if (player_active_bl) movement_arrowKeys();
         p_inv = GetComponent<Player_Inventory>();
     }
 
@@ -84,29 +104,38 @@ public class CharacterControl : MonoBehaviour
     }
 
     /*
-    Purpose:                Check for trigger if collided with object with tag "Part" and has_object is false to pick that object up.
-    Effects:                PickUpPart().
+    Purpose:                Attach object to player's child transform attach_point as child and reposition to attach_point's position.
+    Effects:                Part that was picked up is now child of player's child transform attach_point (Player is a grandparent!).
+                            Will not be transfered to other player if collided while being held or attached to caravan
     Input/Output:           Input Collider c. Output N/A.
-    Global Variables Used:  has_object (Class CharacterControl).
+    Global Variables Used:  transform of Collider c's gameObject, Player_Inventory.CaravanPart,
     */
-    void OnTriggerEnter(Collider c)
+    void PickUpPart(Collider c)
     {
-        if (!has_object && c.gameObject.tag == "Part" && p_inv.CaravanPart < 1) //Sorry to mess with your Character Controller but i think we agreed on only one part at a time ~Silas
+        Part part = c.GetComponent<Part>();
+
+        if (!part.isOnCaravan && !part.isPickedUp)
         {
-            PickUpPart(c);
+            c.GetComponent<Part>().AttachTo(transform.GetChild(0));
+            p_inv.CaravanPart += 1; //I added this for the sake of inventory ~Silas
         }
     }
 
     /*
-    Purpose:                Attach object to player's child transform attach_point as child and reposition to attach_point's position.
-    Effects:                Part that was picked up is now child of player's child transform attach_point (Player is a grandparent!).
+    Purpose:                Check for trigger if collided with object with tag "Part" and has_object is false to pick that object up.
+    Effects:                PickUpPart().
     Input/Output:           Input Collider c. Output N/A.
-    Global Variables Used:  has_object (Class CharacterControl), transform of Collider c's gameObject, Player_Inventory.CaravanPart,
+    Global Variables Used:  See PickUpPart().
     */
-    void PickUpPart(Collider c)
+    void OnTriggerEnter(Collider c)
     {
-        c.GetComponent<Part>().AttachTo(transform.GetChild(0));
-        has_object = true;
-        p_inv.CaravanPart += 1; //I added this for the sake of inventory ~Silas
+        if (!has_part && c.gameObject.tag == "Part")
+        {
+            PickUpPart(c);
+        }
+        else if (has_part)
+        {
+            Debug.Log(transform.name + " is holding a part");
+        }
     }
 }

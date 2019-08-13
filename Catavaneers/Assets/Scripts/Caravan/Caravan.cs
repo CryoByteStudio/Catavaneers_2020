@@ -25,36 +25,8 @@ public class Caravan : MonoBehaviour
 
         if (words[1] == "part")
         {
-            switch (Int32.Parse(words[2]))
-            {
-                case 1:
-                    return transform.GetChild(0);
-                case 2:
-                    return transform.GetChild(1);
-                case 3:
-                    return transform.GetChild(2);
-                case 4:
-                    return transform.GetChild(3);
-                case 5:
-                    return transform.GetChild(4);
-                case 6:
-                    return transform.GetChild(5);
-                case 7:
-                    return transform.GetChild(6);
-                case 8:
-                    return transform.GetChild(7);
-                case 9:
-                    return transform.GetChild(8);
-                case 10:
-                    return transform.GetChild(9);
-                case 11:
-                    return transform.GetChild(10);
-                case 12:
-                    return transform.GetChild(11);
-                default:
-                    Debug.Log("Can't find part slot...");
-                    return null;
-            }
+            int part_num = Int32.Parse(words[2]);
+            return transform.GetChild(part_num - 1);
         }
         else
         {

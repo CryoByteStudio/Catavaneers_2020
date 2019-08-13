@@ -40,14 +40,14 @@ public class InteractWithCaravan : MonoBehaviour
 
             if (Input.GetButtonDown(Place_Part_str))
             {
-                if (char_control.has_object)
+                if (char_control.has_part)
                 {
                     AddToCaravan();
                 }
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
-                if (!char_control.has_object)
+                //if (!char_control.has_part)
                 {
                     RemoveFromCaravan();
                 }
@@ -135,7 +135,6 @@ public class InteractWithCaravan : MonoBehaviour
         part_tf.GetComponent<Part>().AttachTo(part_slot_tf);
 
         caravan.parts_tf.AddFirst(part_tf);
-        char_control.has_object = false;
         p_inv.CaravanPart -= 1;
     }
 }
