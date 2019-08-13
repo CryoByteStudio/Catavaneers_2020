@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
     static Game_Manager _instance = null;
+    private Button[] buttons;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +29,28 @@ public class Game_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(SceneManager.GetActiveScene().name == "Title")
+        {
+            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+            buttons[0].onClick.AddListener(StartGame);
+            buttons[1].onClick.AddListener(QuitGame);
+        }
     }
 
     public static Game_Manager instance
     {
         get { return _instance; }   // can also use just 'get;'
         set { _instance = value; }  // can also use just 'set;'
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quiting");
+        Application.Quit();
     }
 }
