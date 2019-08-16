@@ -45,7 +45,7 @@ public class Game_Manager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()

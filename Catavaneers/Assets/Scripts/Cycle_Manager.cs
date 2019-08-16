@@ -17,6 +17,7 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private int wood_count;
     [SerializeField] private bool is_caravan_whole;
     [SerializeField] private bool has_caravan_travelled;
+    [SerializeField] private float end_distance_float =100f;
 
     private float timer_float;
     private bool is_timer_counting;
@@ -95,7 +96,7 @@ public class Cycle_Manager : MonoBehaviour
     void PauseCycle()
     {
         is_timer_counting = false;
-        FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + 5, 
+        FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + ((end_distance_float / 3) * (timer_float / day_timer_float )), 
                                                                     FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
     }
 
