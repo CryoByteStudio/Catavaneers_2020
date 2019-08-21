@@ -10,14 +10,15 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private Text day_counter_text;
     [SerializeField] private float day_timer_float;
     [SerializeField] private float night_timer_float;
-    [SerializeField] private bool is_day;
+    [SerializeField] public bool is_day;
     [SerializeField] private bool is_night;
     [SerializeField] private int current_day_int;
     [SerializeField] private int max_day_int;
     [SerializeField] private int wood_count;
     [SerializeField] private bool is_caravan_whole;
     [SerializeField] private bool has_caravan_travelled;
-    [SerializeField] private float end_distance_float =100f;
+    [SerializeField] private float end_distance_float =200f;
+    [SerializeField] private float dist_travelled_float = 0f;
 
     private float timer_float;
     private bool is_timer_counting;
@@ -98,6 +99,8 @@ public class Cycle_Manager : MonoBehaviour
         is_timer_counting = false;
         FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + ((end_distance_float / 3) * (timer_float / day_timer_float )), 
                                                                     FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
+        dist_travelled_float = 
+
     }
 
     /*
@@ -128,5 +131,10 @@ public class Cycle_Manager : MonoBehaviour
         {
             Time.timeScale = 0.0f;
         }
+        else
+        {
+            FindObjectOfType<Caravan>().GetComponentInChildren<Spawner>().Spawn = true;
+        }
+
     }
 }

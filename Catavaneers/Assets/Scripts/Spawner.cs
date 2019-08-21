@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
     public float SpawnDelay;
     public float SecondsPassed;
 
-    private int SpawnID;
+    public int SpawnID;
     
 
     // Start is called before the first frame update
@@ -140,7 +140,7 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Need Time");
+           // Debug.Log("Need Time");
         }
     
     }
