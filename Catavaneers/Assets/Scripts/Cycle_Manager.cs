@@ -99,7 +99,7 @@ public class Cycle_Manager : MonoBehaviour
         is_timer_counting = false;
         FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + ((end_distance_float / 3) * (timer_float / day_timer_float )), 
                                                                     FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
-        dist_travelled_float = 
+        
 
     }
 
