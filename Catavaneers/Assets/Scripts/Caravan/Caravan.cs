@@ -7,6 +7,11 @@ public class Caravan : MonoBehaviour
 {
     [SerializeField] public LinkedList<Transform> parts_tf;
     [SerializeField] public int health;
+    
+    public bool isFullPart
+    {
+        get { return parts_tf.Count == 12; }
+    }
 
     void Start()
     {

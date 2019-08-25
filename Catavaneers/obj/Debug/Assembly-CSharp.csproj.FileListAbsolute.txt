@@ -538,3 +538,5 @@ C:\Users\tuxed\OneDrive\Desktop\Catavaneers_2020\Catavaneers\obj\Debug\Assembly-
 C:\Users\tuxed\OneDrive\Desktop\Catavaneers_2020\Catavaneers\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\tuxed\OneDrive\Desktop\Catavaneers_2020\Catavaneers\obj\Debug\Assembly-CSharp.dll
 C:\Users\tuxed\OneDrive\Desktop\Catavaneers_2020\Catavaneers\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Vi Tiet\Desktop\Unity Project\Cap Stone Project - Catavaneer\Catavaneers_2020\Catavaneers\Temp\bin\Debug\Unity.InputSystem.dll
+C:\Users\Vi Tiet\Desktop\Unity Project\Cap Stone Project - Catavaneer\Catavaneers_2020\Catavaneers\Temp\bin\Debug\Unity.InputSystem.pdb

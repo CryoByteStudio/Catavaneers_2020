@@ -108,7 +108,7 @@ public class InteractWithCaravan : MonoBehaviour
     Global Variables Used:  caravan_tf, parts_tf, caravan, char_control (Class Caravan), transform (Class Part), 
                             has_object (Class CharacterControl)
     */
-    private void RemoveFromCaravan()
+    public void RemoveFromCaravan()
     {
         Transform part_tf = caravan.FindPartSlot();
 
@@ -127,7 +127,7 @@ public class InteractWithCaravan : MonoBehaviour
     Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_control (Class InteractWithCaravan), transform, parts_tf (Class Caravan),
                             transform (Class Part), has_object (Class CharacterControl), Player_Inventory.CaravanPart,
     */
-    void AddToCaravan()
+    public void AddToCaravan()
     {
         Transform part_tf = transform.GetChild(0).GetChild(0);
 

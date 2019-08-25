@@ -7,7 +7,7 @@ public class CharacterControl : MonoBehaviour
 {
     [SerializeField] Transform attach_tf;
 
-    [SerializeField] bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
+    [SerializeField] public bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
     public float speed_fl=10f; // speed of the character
 
     [SerializeField] string horizontal_ctrl = "Horizontal_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
