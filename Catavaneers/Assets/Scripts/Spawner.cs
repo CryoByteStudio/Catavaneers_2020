@@ -148,7 +148,7 @@ public class Spawner : MonoBehaviour
    
     private void SpawnEnemy()
     {
-        GameObject Enemy = (GameObject)Instantiate(Enemies[Difficulty], gameObject.transform.position, Quaternion.identity);
+        GameObject Enemy = Instantiate(Enemies[Difficulty], gameObject.transform.position, Quaternion.identity);
         Enemy.SendMessage("Bob", SpawnID);
             NumEnemy++;
         SpawnedEnemy++;

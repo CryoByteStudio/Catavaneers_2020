@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy_Functions : MonoBehaviour
 {
@@ -17,8 +18,16 @@ public class Enemy_Functions : MonoBehaviour
 
     void Start()
     {
-        spawn_id_int = FindObjectOfType<Caravan>().GetComponentInChildren<Spawner>().SpawnID;
-        caravan_tf = FindObjectOfType<Caravan>().GetComponent<Transform>();
+        Initiate();
+    }
+
+    private void Initiate()
+    {
+        // Placeholder for better enemy movement
+        NavMeshAgent self = gameObject.AddComponent<NavMeshAgent>();
+        self.speed = MoveSpeed;
+        self.stoppingDistance = MinDist;
+        self.destination = Caravan.position;
     }
 
     void Update()
@@ -33,7 +42,7 @@ public class Enemy_Functions : MonoBehaviour
         if (Vector3.Distance(transform.position, caravan_tf.position) >= MinDist)
         {
 
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
         }
         

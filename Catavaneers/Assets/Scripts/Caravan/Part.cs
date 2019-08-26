@@ -4,7 +4,50 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
-    
+    // Property field
+    /*
+    Purpose:                Finds out if has Player as parent.
+    Effects:                Return true if yes and false if no.
+    Input/Output:           Input N/A. Output true/false.
+    Global Variables Used:  No variable was altered.
+    */
+    public bool isPickedUp
+    {
+        get
+        {
+            if (transform.parent && transform.GetComponentInParent<CharacterControl>())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    // Property field
+    /*
+    Purpose:                Finds out if has Caravan as parent.
+    Effects:                Return true if yes and false if no.
+    Input/Output:           Input N/A. Output true/false.
+    Global Variables Used:  No variable was altered.
+    */
+    public bool isOnCaravan
+    {
+        get
+        {
+            if (transform.parent && transform.GetComponentInParent<Caravan>())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
     /*
     Purpose:                Attach self to provided Transform (in this case, part to caravan).
     Effects:                Part's parent is now caravan and position is the slot's position.
@@ -51,24 +94,24 @@ public class Part : MonoBehaviour
     }
 
     /*
-    Purpose:                Add rigidbody to object to use Unity physics engine.
-    Effects:                Part now has a rigidbody.
+    Purpose:                Disable kinematic to use gravity.
+    Effects:                Kinematic is disabled.
     Input/Output:           N/A.
     Global Variables Used:  transform (Class Parts).
     */
     void EnablePhysics()
     {
-        transform.gameObject.AddComponent<Rigidbody>();
+        transform.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     /*
-    Purpose:                Remove rigidbody of object to disable physics.
-    Effects:                Rigidbody component is removed from part.
+    Purpose:                Enable kinematic to stop gravity.
+    Effects:                Kinematic is enabled..
     Input/Output:           N/A.
     Global Variables Used:  transform (Class Parts).
     */
     void DisablePhysics()
     {
-        Destroy(transform.gameObject.GetComponent<Rigidbody>());
+        transform.GetComponent<Rigidbody>().isKinematic = true;
     }
 }
