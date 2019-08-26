@@ -27,7 +27,7 @@ public class Enemy_Functions : MonoBehaviour
         NavMeshAgent self = gameObject.AddComponent<NavMeshAgent>();
         self.speed = MoveSpeed;
         self.stoppingDistance = MinDist;
-        self.destination = Caravan.position;
+        self.destination = caravan_tf.position;
     }
 
     void Update()
