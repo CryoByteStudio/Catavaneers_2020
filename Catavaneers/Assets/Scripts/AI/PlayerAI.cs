@@ -11,7 +11,7 @@ public class PlayerAI : MonoBehaviour
         FixingCaravan, Idle
     }
 
-    [SerializeField] Transform caravan_attach_point;
+    [SerializeField] public Transform caravan_attach_point;
 
     NavMeshAgent agent;
 
@@ -158,7 +158,7 @@ public class PlayerAI : MonoBehaviour
         }
     }
 
-    private void AttachSelf(Transform destination)
+    public void AttachSelf(Transform destination)
     {
         GetComponent<CharacterControl>().enabled = false;
         transform.position = destination.position;

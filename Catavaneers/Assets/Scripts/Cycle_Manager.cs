@@ -24,6 +24,7 @@ public class Cycle_Manager : MonoBehaviour
     private bool is_timer_counting;
     private bool is_done_counting;
     public Caravan caravan_s;
+    PlayerAI[] playerAIs;
     #endregion
 
 
@@ -97,15 +98,17 @@ public class Cycle_Manager : MonoBehaviour
     void PauseCycle()
     {
         is_timer_counting = false;
-        PlayerAI[] playerAIs = FindObjectsOfType<PlayerAI>();
+        playerAIs = FindObjectsOfType<PlayerAI>();
         for (int i =0; i<4; i++)
         {
             playerAIs[i].IsAttached = true;
+            playerAIs[i].AttachSelf(playerAIs[i].caravan_attach_point);
         }
+
+
         FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + ((end_distance_float / 3) * (timer_float / day_timer_float )), 
                                                                     FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
         
-
     }
 
     /*
@@ -118,8 +121,8 @@ public class Cycle_Manager : MonoBehaviour
     {
         is_timer_counting = true;
         has_caravan_travelled = true;
-        PlayerAI[] playerAIs = FindObjectsOfType<PlayerAI>();
-        for (int i = 0; i < 4; i++)
+        playerAIs = FindObjectsOfType<PlayerAI>();
+        for (int i = 0; i < playerAIs.Length; i++)
         {
             playerAIs[i].IsAttached = false;
         }
