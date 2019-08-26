@@ -56,7 +56,17 @@ public class PlayerAI : MonoBehaviour
         if (IsAttached) { AttachSelf(caravan_attach_point); return; }
         else DetachSelf();
 
-        if (!GetComponent<CharacterControl>().player_active_bl) Automate();
+        if (GetComponent<CharacterControl>().player_active_bl)
+        {
+            agent.isStopped = true;
+            return;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
+
+        Automate();
     }
 
     private void Automate()
