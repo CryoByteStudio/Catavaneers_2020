@@ -61,7 +61,7 @@ public class PlayerAI : MonoBehaviour
 
     private void Automate()
     {
-        if (!GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>().isFullPart)
+        if (!GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>().isFullPart && (CheckPartsAvailability() || has_part))
         {
             states = States.FixingCaravan;
         }
@@ -76,8 +76,15 @@ public class PlayerAI : MonoBehaviour
                 FixCaravan();
                 break;
             case States.Idle:
+                ReturnToCaravan();
                 break;
         }
+    }
+
+    private void ReturnToCaravan()
+    {
+        agent.stoppingDistance = 0.0f;
+        agent.destination = caravan_attach_point.position;
     }
 
     private void FixCaravan()
@@ -117,11 +124,22 @@ public class PlayerAI : MonoBehaviour
         return closest_part_position;
     }
 
+    private bool CheckPartsAvailability()
+    {
+        for (int i = 0; i < parts_list.Count; i++)
+        {
+            if (parts_list[i].transform.parent == null)
+                return true;
+        }
+
+        return false;
+    }
+
     private void PickUpPart()
     {
         if (!GetComponent<CharacterControl>().has_part)
         {
-            agent.stoppingDistance = 0;
+            agent.stoppingDistance = 0.0f;
             agent.destination = FindClosestPart();
         }
     }
@@ -132,7 +150,7 @@ public class PlayerAI : MonoBehaviour
         {
             Caravan caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
 
-            agent.stoppingDistance = 5f;
+            agent.stoppingDistance = 5.0f;
             agent.destination = caravan.transform.position;
 
             if (Vector3.Distance(transform.position, caravan.transform.position) <= agent.stoppingDistance * 1.5f)
