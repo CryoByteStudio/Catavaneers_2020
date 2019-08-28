@@ -38,11 +38,15 @@ public class Cycle_Manager : MonoBehaviour
 
     void Update()
     {
-        day_counter_text.text = "Current Day: " + current_day_int.ToString();
-        if(timer_float >= 0.0f && is_timer_counting)
+        if (is_day)
+            day_counter_text.text = "Day: " + current_day_int.ToString();
+        else
+            day_counter_text.text = "Night: " + current_day_int.ToString();
+        if (timer_float >= 0.0f && is_timer_counting)
         {
             timer_float -= Time.deltaTime;
-            timer_text.text = timer_float.ToString();
+            //timer_text.text = timer_float.ToString();
+            timer_text.text = Mathf.FloorToInt(timer_float / 60).ToString()+ "m : " + Mathf.FloorToInt(timer_float % 60).ToString() + "s";
         }
         else if(timer_float <= 0.0f && (is_day || is_night))
         {
@@ -65,11 +69,19 @@ public class Cycle_Manager : MonoBehaviour
         {
             is_caravan_whole = true;
         }
-        if (is_day && is_caravan_whole && wood_count >= 100 && !has_caravan_travelled)
+        if (is_day && is_caravan_whole && wood_count >= 100 && !has_caravan_travelled && is_timer_counting)
         {
-            wood_count -= 100;
+            
             PauseCycle();
+
             Debug.Log("caravan traveled");
+
+        }else if (is_day && is_caravan_whole && wood_count >= 100 && !has_caravan_travelled && !is_timer_counting)
+        {
+            MoveCaravan();
+        }
+        else if (is_day && is_caravan_whole && has_caravan_travelled && !is_timer_counting)
+        {
             ResumeCycle();
         }
 
@@ -102,12 +114,8 @@ public class Cycle_Manager : MonoBehaviour
         for (int i =0; i<4; i++)
         {
             playerAIs[i].IsAttached = true;
-            playerAIs[i].AttachSelf(playerAIs[i].caravan_attach_point);
+        //   playerAIs[i].AttachSelf(playerAIs[i].caravan_attach_point);
         }
-
-
-        FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + ((end_distance_float / 3) * (timer_float / day_timer_float )), 
-                                                                    FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
         
     }
 
@@ -120,10 +128,11 @@ public class Cycle_Manager : MonoBehaviour
     void ResumeCycle()
     {
         is_timer_counting = true;
-        has_caravan_travelled = true;
+
         playerAIs = FindObjectsOfType<PlayerAI>();
         for (int i = 0; i < playerAIs.Length; i++)
         {
+         //   playerAIs[i].DetachSelf();
             playerAIs[i].IsAttached = false;
         }
     }
@@ -149,5 +158,19 @@ public class Cycle_Manager : MonoBehaviour
             FindObjectOfType<Caravan>().GetComponentInChildren<Spawner>().Spawn = true;
         }
 
+    }
+
+    /*
+    Purpose: Moves the caravan.
+    Effects: move caravan to new location, removes wood from caravan.
+    Input/Output: N/A
+    Global Variables Used: wood_count, has_caravan_travelled.
+    */
+    private void MoveCaravan()
+    {
+        FindObjectOfType<Caravan>().transform.position = new Vector3(FindObjectOfType<Caravan>().transform.position.x + ((end_distance_float / 3) * (timer_float / day_timer_float)),
+                                                                 FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
+        has_caravan_travelled = true;
+        wood_count -= 100;
     }
 }

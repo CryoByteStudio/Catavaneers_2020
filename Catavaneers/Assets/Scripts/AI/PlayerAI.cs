@@ -158,7 +158,7 @@ public class PlayerAI : MonoBehaviour
         }
     }
 
-    public void AttachSelf(Transform destination)
+    private void AttachSelf(Transform destination)
     {
         GetComponent<CharacterControl>().enabled = false;
         transform.position = destination.position;
