@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy_Functions : MonoBehaviour
 {
-
-    public Transform Player;
+    public GameObject[] Player;
     public Transform caravan_tf;
     int MoveSpeed = 4;
     //int MaxDist = 10;
@@ -14,7 +13,7 @@ public class Enemy_Functions : MonoBehaviour
 
     public int spawn_id_int;
 
-
+    NavMeshAgent self;
 
     void Start()
     {
@@ -23,29 +22,40 @@ public class Enemy_Functions : MonoBehaviour
 
     private void Initiate()
     {
+        caravan_tf = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Transform>();
+        
         // Placeholder for better enemy movement
-        NavMeshAgent self = gameObject.AddComponent<NavMeshAgent>();
+        self = gameObject.AddComponent<NavMeshAgent>();
         self.speed = MoveSpeed;
-        self.stoppingDistance = MinDist;
+        self.stoppingDistance = 10f;
         self.destination = caravan_tf.position;
     }
 
     void Update()
     {
-        if (FindObjectOfType<Canvas>().GetComponent<Cycle_Manager>().is_day)
+        //if (FindObjectOfType<Canvas>().GetComponent<Cycle_Manager>().is_day)
+        //{
+        //    FindObjectOfType<Spawner>().KillEnemy(spawn_id_int);
+        //    Destroy(this.gameObject);
+        //}
+
+        //transform.LookAt(caravan_tf);
+
+        //if (Vector3.Distance(transform.position, caravan_tf.position) >= MinDist)
+        //{
+
+        ////transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+
+        //}
+
+        if (Vector3.Distance(self.transform.position, caravan_tf.position) <= 10f)
         {
-            FindObjectOfType<Spawner>().KillEnemy(spawn_id_int);
-            Destroy(this.gameObject);
+            self.isStopped = true;
         }
-        transform.LookAt(caravan_tf);
-
-        if (Vector3.Distance(transform.position, caravan_tf.position) >= MinDist)
+        else
         {
-
-        //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
+            self.isStopped = false;
         }
-        
     }
 
 

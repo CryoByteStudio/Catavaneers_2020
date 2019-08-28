@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
+    [SerializeField] int health_value = 2;
+    public int healthValue { get { return health_value; } }
+
     // Property field
     /*
     Purpose:                Finds out if has Player as parent.

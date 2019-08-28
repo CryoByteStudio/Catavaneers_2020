@@ -104,10 +104,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149150, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149144, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4527d485d7d964048b28be523e4fd139, type: 2}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -117,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -159,20 +169,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4294453051551149144, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4527d485d7d964048b28be523e4fd139, type: 2}
-    - target: {fileID: 4294453051551149124, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
-        type: 3}
-      propertyPath: player_active_bl
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149124, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: speed_fl
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149125, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}

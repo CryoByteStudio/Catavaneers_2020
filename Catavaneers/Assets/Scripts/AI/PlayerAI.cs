@@ -6,9 +6,10 @@ using UnityEngine.AI;
 
 public class PlayerAI : MonoBehaviour
 {
+    #region VARIABLES
     public enum States
     {
-        FixingCaravan, Idle
+        FixingCaravan, Idle, Attack
     }
 
     [SerializeField] Transform caravan_attach_point;
@@ -28,7 +29,9 @@ public class PlayerAI : MonoBehaviour
         get { return isAttached; }
         set { isAttached = value; }
     }
+    #endregion
 
+    #region INITIATE
     private void Start()
     {
         if (!caravan_attach_point)
@@ -48,6 +51,7 @@ public class PlayerAI : MonoBehaviour
             parts_list.Add(part);
         }
     }
+    #endregion
 
     private void Update()
     {
@@ -69,9 +73,10 @@ public class PlayerAI : MonoBehaviour
         Automate();
     }
 
+    #region DRIVER
     private void Automate()
     {
-        if (!GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>().isFullPart && (CheckPartsAvailability() || has_part))
+        if (!GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>().IsFullPart && (CheckPartsAvailability() || has_part))
         {
             states = States.FixingCaravan;
         }
@@ -90,13 +95,17 @@ public class PlayerAI : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
+    #region IDLE
     private void ReturnToCaravan()
     {
         agent.stoppingDistance = 0.0f;
         agent.destination = caravan_attach_point.position;
     }
+    #endregion
 
+    #region FIXING CARAVAN
     private void FixCaravan()
     {
         PickUpPart();
@@ -163,11 +172,13 @@ public class PlayerAI : MonoBehaviour
             agent.stoppingDistance = 5.0f;
             agent.destination = caravan.transform.position;
 
-            if (Vector3.Distance(transform.position, caravan.transform.position) <= agent.stoppingDistance * 1.5f)
+            if (GetComponent<InteractWithCaravan>().CanInteract)
                 GetComponent<InteractWithCaravan>().AddToCaravan();
         }
     }
+    #endregion
 
+    #region MOVE WITH CARAVAN
     private void AttachSelf(Transform destination)
     {
         GetComponent<CharacterControl>().enabled = false;
@@ -178,4 +189,19 @@ public class PlayerAI : MonoBehaviour
     {
         GetComponent<CharacterControl>().enabled = true;
     }
+    #endregion
+
+    #region ATTACK
+    private GameObject FindTarget()
+    {
+        // Find target based on game state (******** NOT IMPLEMENTED ********)
+
+        GameObject gameObject;
+
+        
+
+        return null;
+    }
+
+    #endregion
 }

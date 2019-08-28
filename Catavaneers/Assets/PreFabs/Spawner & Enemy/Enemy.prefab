@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8778268809803033576}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,5 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b984ec48a0db246acb3325d3d51586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  Caravan: {fileID: 3059859427072423019, guid: 212f7f0f9b1df8340a2a41c0f983a1ec, type: 3}
+  Player: []
+  spawn_id_int: 0
