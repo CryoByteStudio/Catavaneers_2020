@@ -26,6 +26,9 @@ public class Player_Camera : MonoBehaviour
 
     [SerializeField] private Camera player_Follow_cam;
 
+    [SerializeField] private GameObject Camera_Ui_Follow_OFF;
+    [SerializeField] private GameObject Camera_Ui_Follow_ON;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,14 +52,20 @@ public class Player_Camera : MonoBehaviour
         if (player_tf.position.x > (cavarane.position.x + 30) || player_tf.position.x < (cavarane.position.x - 30))
         {
             player_Follow_cam.enabled = true;
+            Camera_Ui_Follow_OFF.SetActive(false);
+            Camera_Ui_Follow_ON.SetActive(true);
         }
         else if (player_tf.position.z > (cavarane.position.z + 30) || player_tf.position.z < (cavarane.position.z - 30))
         {
             player_Follow_cam.enabled = true;
+            Camera_Ui_Follow_OFF.SetActive(false);
+            Camera_Ui_Follow_ON.SetActive(true);
         }
         else
         {
             player_Follow_cam.enabled = false;
+            Camera_Ui_Follow_OFF.SetActive(true);
+            Camera_Ui_Follow_ON.SetActive(false);
         }
     }
 }

@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 2b020eca0ff18b640a354700046656d8, type: 2}
+--- !u!1 &13777839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 13777839, guid: 796cb3a06dece754cbf0bb96898155c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2746154171441630035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &18074444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1781758291542613734, guid: 7a039e5dc2946cc4c9e7b22107f23dc7,
@@ -236,33 +242,23 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8f045841076d31f4d97ee437350ad870, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67fef92573ac3f4489a59eae62e59530, type: 3}
---- !u!1 &80001413 stripped
+--- !u!1 &61261545 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 658485191108658849, guid: 5bfcd31ec246e0648ad44bcee2120600,
+  m_CorrespondingSourceObject: {fileID: 61261545, guid: 796cb3a06dece754cbf0bb96898155c7,
     type: 3}
-  m_PrefabInstance: {fileID: 1473467408}
+  m_PrefabInstance: {fileID: 2746154171441630035}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &80001424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80001413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c98a7983512b74b9dffc6d11b3a2da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caravan_attach_point: {fileID: 233841285}
-  states: 0
-  has_part: 0
-  isAttached: 0
 --- !u!4 &95129863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6893950165692716534, guid: 67fef92573ac3f4489a59eae62e59530,
     type: 3}
   m_PrefabInstance: {fileID: 43801306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &132832534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 132832534, guid: 796cb3a06dece754cbf0bb96898155c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2746154171441630035}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &207803102
 PrefabInstance:
@@ -338,28 +334,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f100cf29ffd9ba541bf2ed14cbfe60fb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a039e5dc2946cc4c9e7b22107f23dc7, type: 3}
---- !u!1 &211183586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7668759949463724962, guid: 503b549ce50700c4d8fd29004ee02bd5,
-    type: 3}
-  m_PrefabInstance: {fileID: 306765030}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &211183597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211183586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c98a7983512b74b9dffc6d11b3a2da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caravan_attach_point: {fileID: 1313415057}
-  states: 0
-  has_part: 0
-  isAttached: 0
 --- !u!4 &212965993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1974843007580083417, guid: e6704015c433edf4b931bce0fbb28851,
@@ -383,26 +357,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3444373819298073951, guid: 503b549ce50700c4d8fd29004ee02bd5,
-        type: 3}
-      propertyPath: speed_mod_fl
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668759949463724984, guid: 503b549ce50700c4d8fd29004ee02bd5,
-        type: 3}
-      propertyPath: player_active_bl
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668759949463724985, guid: 503b549ce50700c4d8fd29004ee02bd5,
-        type: 3}
-      propertyPath: m_AngularSpeed
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668759949463724985, guid: 503b549ce50700c4d8fd29004ee02bd5,
-        type: 3}
-      propertyPath: m_Speed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7668759949463724966, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
@@ -463,6 +417,19 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 681811323, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
+      propertyPath: Camera_Ui_Follow_OFF
+      value: 
+      objectReference: {fileID: 944579986}
+    - target: {fileID: 681811323, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
+      propertyPath: Camera_Ui_Follow_ON
+      value: 
+      objectReference: {fileID: 730944814}
+    - target: {fileID: 7754212901350626499, guid: 503b549ce50700c4d8fd29004ee02bd5,
+        type: 3}
+      propertyPath: caravan_attach_point
+      value: 
+      objectReference: {fileID: 1313415057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
 --- !u!4 &364503523 stripped
@@ -494,6 +461,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8204265048349162909, guid: e96f4e702713ae0418318f6f18f2ee18,
     type: 3}
   m_PrefabInstance: {fileID: 1575564440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &440900268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 440900268, guid: 796cb3a06dece754cbf0bb96898155c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2746154171441630035}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &485648975 stripped
 GameObject:
@@ -967,6 +940,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &730944814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 730944814, guid: 796cb3a06dece754cbf0bb96898155c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2746154171441630035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &840285678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,6 +962,14 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 754127679, guid: e02ac57714ea64942bf0692cc5c1e35d, type: 3}
+      propertyPath: Camera_Ui_Follow_OFF
+      value: 
+      objectReference: {fileID: 1769006637}
+    - target: {fileID: 754127679, guid: e02ac57714ea64942bf0692cc5c1e35d, type: 3}
+      propertyPath: Camera_Ui_Follow_ON
+      value: 
+      objectReference: {fileID: 132832534}
     - target: {fileID: 1356671411675450063, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1038,11 +1025,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6301637865742410806, guid: e02ac57714ea64942bf0692cc5c1e35d,
-        type: 3}
-      propertyPath: speed_mod_fl
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1356671411675450065, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: player_active_bl
@@ -1058,6 +1040,11 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1379027763713916330, guid: e02ac57714ea64942bf0692cc5c1e35d,
+        type: 3}
+      propertyPath: caravan_attach_point
+      value: 
+      objectReference: {fileID: 1239445941}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02ac57714ea64942bf0692cc5c1e35d, type: 3}
 --- !u!1 &914271015 stripped
@@ -1101,28 +1088,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1693216127}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &949778478 stripped
+--- !u!1 &944579986 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8266804537934612544, guid: 1da87dda73fb7874fa6574e278d3bc8a,
+  m_CorrespondingSourceObject: {fileID: 944579986, guid: 796cb3a06dece754cbf0bb96898155c7,
     type: 3}
-  m_PrefabInstance: {fileID: 1363897815}
+  m_PrefabInstance: {fileID: 2746154171441630035}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &949778489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949778478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c98a7983512b74b9dffc6d11b3a2da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caravan_attach_point: {fileID: 1781765170}
-  states: 0
-  has_part: 0
-  isAttached: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,28 +1347,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 910b8df3538ff0149aca925aec0b8e34, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 398337c13da30414387d2feb14e529b7, type: 3}
---- !u!1 &1026647538 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1356671411675450059, guid: e02ac57714ea64942bf0692cc5c1e35d,
-    type: 3}
-  m_PrefabInstance: {fileID: 840285678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1026647549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026647538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c98a7983512b74b9dffc6d11b3a2da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caravan_attach_point: {fileID: 1239445941}
-  states: 0
-  has_part: 0
-  isAttached: 0
 --- !u!1 &1061013272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4421396094696231219, guid: 398337c13da30414387d2feb14e529b7,
@@ -1771,26 +1720,14 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
-    - target: {fileID: 3970382512169150141, guid: 1da87dda73fb7874fa6574e278d3bc8a,
-        type: 3}
-      propertyPath: speed_mod_fl
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266804537934612570, guid: 1da87dda73fb7874fa6574e278d3bc8a,
-        type: 3}
-      propertyPath: player_active_bl
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266804537934612571, guid: 1da87dda73fb7874fa6574e278d3bc8a,
-        type: 3}
-      propertyPath: m_AngularSpeed
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266804537934612571, guid: 1da87dda73fb7874fa6574e278d3bc8a,
-        type: 3}
-      propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
+    - target: {fileID: 257403660, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
+      propertyPath: Camera_Ui_Follow_OFF
+      value: 
+      objectReference: {fileID: 440900268}
+    - target: {fileID: 257403660, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
+      propertyPath: Camera_Ui_Follow_ON
+      value: 
+      objectReference: {fileID: 61261545}
     - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1846,6 +1783,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8307173093561368353, guid: 1da87dda73fb7874fa6574e278d3bc8a,
+        type: 3}
+      propertyPath: caravan_attach_point
+      value: 
+      objectReference: {fileID: 1781765170}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
 --- !u!1 &1468617193 stripped
@@ -1894,26 +1836,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513355907897944156, guid: 5bfcd31ec246e0648ad44bcee2120600,
-        type: 3}
-      propertyPath: speed_mod_fl
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 658485191108658875, guid: 5bfcd31ec246e0648ad44bcee2120600,
-        type: 3}
-      propertyPath: player_active_bl
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 658485191108658874, guid: 5bfcd31ec246e0648ad44bcee2120600,
-        type: 3}
-      propertyPath: m_AngularSpeed
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 658485191108658874, guid: 5bfcd31ec246e0648ad44bcee2120600,
-        type: 3}
-      propertyPath: m_Speed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 658485191108658853, guid: 5bfcd31ec246e0648ad44bcee2120600,
         type: 3}
@@ -1974,6 +1896,19 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 45567852, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
+      propertyPath: Camera_Ui_Follow_OFF
+      value: 
+      objectReference: {fileID: 1855880211}
+    - target: {fileID: 45567852, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
+      propertyPath: Camera_Ui_Follow_ON
+      value: 
+      objectReference: {fileID: 13777839}
+    - target: {fileID: 636133229256339904, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: caravan_attach_point
+      value: 
+      objectReference: {fileID: 233841285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
 --- !u!1 &1537904496
@@ -2312,11 +2247,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1873413527}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1769006637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1769006637, guid: 796cb3a06dece754cbf0bb96898155c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2746154171441630035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1781765170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2855382711407624189, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
     type: 3}
   m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1855880211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1855880211, guid: 796cb3a06dece754cbf0bb96898155c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2746154171441630035}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1873413527
 PrefabInstance:
@@ -2737,50 +2684,5 @@ PrefabInstance:
       propertyPath: caravan_s
       value: 
       objectReference: {fileID: 370719081}
-    - target: {fileID: 2746154172173011216, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: end_distance_float
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170734197689, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 442
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170734197689, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 141
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170734197689, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170734197689, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170983038774, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 444
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170983038774, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170983038774, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2746154170983038774, guid: 796cb3a06dece754cbf0bb96898155c7,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -168
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796cb3a06dece754cbf0bb96898155c7, type: 3}
