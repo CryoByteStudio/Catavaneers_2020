@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
-    [SerializeField] int health_value = 2;
-    public int healthValue { get { return health_value; } }
+    [SerializeField] float health_value = 2f;
+    public float healthValue { get { return health_value; } }
 
     // Property field
     /*

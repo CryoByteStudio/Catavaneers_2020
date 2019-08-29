@@ -40,13 +40,15 @@ public class Caravan : MonoBehaviour
     }
 
     /*
-    Purpose:                Get a random transform of the object in the parts_tf linked list of caravan.
+    Purpose:                //Get a random transform of the object in the parts_tf list of caravan.
+                            Get first element in parts_tf.
     Effects:                Return transform of the last part in the list of parts that are attached to the caravan.
     Input/Output:           Input N/A. Output part_tf last value or null.
     Global Variables Used:  part_tf (Class InteractWithCaracan).
     */
     public Transform FindPartSlot()
     {
-        return (parts_tf.Count > 0) ? parts_tf[UnityEngine.Random.Range(0, parts_tf.Count)] : null;
+        //return (parts_tf.Count > 0) ? parts_tf[UnityEngine.Random.Range(0, parts_tf.Count)] : null;
+        return (parts_tf.Count > 0) ? parts_tf[0] : null;
     }
 }

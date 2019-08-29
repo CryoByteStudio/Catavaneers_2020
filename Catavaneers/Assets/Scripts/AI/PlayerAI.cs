@@ -14,9 +14,15 @@ public class PlayerAI : MonoBehaviour
 
     [SerializeField] Transform caravan_attach_point;
 
-    NavMeshAgent agent;
+    [SerializeField] EnemyManager enemyManager;
+
+    [SerializeField] int enemyThreshold;
+
+    NavMeshAgent self;
 
     List<GameObject> parts_list;
+
+    List<GameObject> targets_list;
 
     public States states = new States();
 
@@ -29,21 +35,36 @@ public class PlayerAI : MonoBehaviour
         get { return isAttached; }
         set { isAttached = value; }
     }
+
+    [SerializeField] float attackInterval;
+
+    float timeSinceLastAttack = Mathf.Infinity;
+
     #endregion
 
     #region INITIATE
     private void Start()
     {
-        if (!caravan_attach_point)
-            Debug.LogError("No reference to caravan attach point");
         Initiate();
     }
 
     private void Initiate()
     {
+        if (!caravan_attach_point)
+            Debug.LogError("No reference to caravan attach point");
+
+        if (!enemyManager)
+            enemyManager = FindObjectOfType<EnemyManager>();
+
+        if (enemyThreshold == 0) enemyThreshold = 20;
+
+        if (attackInterval == 0f) attackInterval = 1f;
+
         GameObject[] parts = GameObject.FindGameObjectsWithTag("Part");
         parts_list = new List<GameObject>();
-        agent = GetComponent<NavMeshAgent>();
+        targets_list = new List<GameObject>();
+
+        self = GetComponent<NavMeshAgent>();
 
         foreach (GameObject part in parts)
         {
@@ -62,12 +83,12 @@ public class PlayerAI : MonoBehaviour
 
         if (GetComponent<CharacterControl>().player_active_bl)
         {
-            agent.isStopped = true;
+            self.isStopped = true;
             return;
         }
         else
         {
-            agent.isStopped = false;
+            self.isStopped = false;
         }
 
         Automate();
@@ -76,13 +97,19 @@ public class PlayerAI : MonoBehaviour
     #region DRIVER
     private void Automate()
     {
-        if (!GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>().IsFullPart && (CheckPartsAvailability() || has_part))
+        Caravan caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
+
+        if ((!caravan.IsFullPart && (CheckPartsAvailability() || has_part) && enemyManager.GetEnemyCount() < enemyThreshold) || has_part)
         {
             states = States.FixingCaravan;
         }
-        else
+        else if (enemyManager.GetEnemyCount() == 0)
         {
             states = States.Idle;
+        }
+        else
+        {
+            states = States.Attack;
         }
 
         switch (states)
@@ -93,6 +120,9 @@ public class PlayerAI : MonoBehaviour
             case States.Idle:
                 ReturnToCaravan();
                 break;
+            case States.Attack:
+                Attack();
+                break;
         }
     }
     #endregion
@@ -100,8 +130,8 @@ public class PlayerAI : MonoBehaviour
     #region IDLE
     private void ReturnToCaravan()
     {
-        agent.stoppingDistance = 0.0f;
-        agent.destination = caravan_attach_point.position;
+        self.stoppingDistance = 0.0f;
+        self.destination = caravan_attach_point.position;
     }
     #endregion
 
@@ -158,8 +188,8 @@ public class PlayerAI : MonoBehaviour
     {
         if (!GetComponent<CharacterControl>().has_part)
         {
-            agent.stoppingDistance = 0.0f;
-            agent.destination = FindClosestPart();
+            self.stoppingDistance = 0.0f;
+            self.destination = FindClosestPart();
         }
     }
 
@@ -169,8 +199,8 @@ public class PlayerAI : MonoBehaviour
         {
             Caravan caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
 
-            agent.stoppingDistance = 5.0f;
-            agent.destination = caravan.transform.position;
+            self.stoppingDistance = 0.0f;
+            self.destination = caravan.transform.position;
 
             if (GetComponent<InteractWithCaravan>().CanInteract)
                 GetComponent<InteractWithCaravan>().AddToCaravan();
@@ -192,15 +222,66 @@ public class PlayerAI : MonoBehaviour
     #endregion
 
     #region ATTACK
-    private GameObject FindTarget()
+    private Transform FindClosestTarget()
     {
         // Find target based on game state (******** NOT IMPLEMENTED ********)
 
-        GameObject gameObject;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        
+        targets_list.Clear();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            targets_list.Add(enemies[i]);
+        }
 
-        return null;
+        Transform closest_target = null;
+        Vector3 closest_target_position = transform.position;
+        float smallest_distance;
+        float current_distance;
+
+        if (targets_list.Count > 0)
+        {
+            closest_target_position = targets_list[0].transform.position;
+            closest_target = targets_list[0].transform;
+
+            for (int i = 0; i < targets_list.Count; i++)
+            {
+                smallest_distance = Vector3.Distance(transform.position, closest_target_position);
+                current_distance = Vector3.Distance(transform.position, targets_list[i].transform.position);
+
+                if (current_distance < smallest_distance)
+                {
+                    closest_target_position = targets_list[i].transform.position;
+                    closest_target = targets_list[i].transform;
+                }
+            }
+        }
+
+        return closest_target;
+    }
+
+    private void Attack()
+    {
+        Assault assault = GetComponent<Assault>();
+
+        Transform target = FindClosestTarget();
+
+        self.destination = target.position;
+
+        self.stoppingDistance = 1f;
+
+        if (Vector3.Distance(transform.position, target.position) <= 2.5f && CanAttack())
+        {
+            timeSinceLastAttack = 0f;
+            assault.DealDamage(target, GetComponent<CharacterControl>().damage);
+        }
+    }
+
+    private bool CanAttack()
+    {
+        timeSinceLastAttack += Time.deltaTime;
+
+        return timeSinceLastAttack >= attackInterval;
     }
 
     #endregion

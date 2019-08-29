@@ -24,6 +24,7 @@ public class InteractWithCaravan : MonoBehaviour
     void Start()
     {
         char_control = GetComponent<CharacterControl>();
+        caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
         p_inv = GetComponent<Player_Inventory>();
     }
 
@@ -46,7 +47,7 @@ public class InteractWithCaravan : MonoBehaviour
 
             health = caravan.GetComponent<Health>();
 
-            if (Input.GetButtonDown(Place_Part_str))
+            if (Input.GetButtonDown(Place_Part_str) && gameObject.tag == "Player")
             {
                 if (char_control.has_part)
                 {
@@ -129,13 +130,23 @@ public class InteractWithCaravan : MonoBehaviour
     {
         if (caravan.FindPartSlot())
         {
-            Part part = caravan.FindPartSlot().GetComponent<Part>();
+            Part part = PartToBeRemoved();
             part.Drop();
             caravan.parts_tf.Remove(part.transform);
+
+            if (!health)
+                health = caravan.GetComponent<Health>();
 
             health.Reduce(part.healthValue);
         }
         else Debug.Log("No part attached to caravan");
+    }
+
+    public Part PartToBeRemoved()
+    {
+        if (caravan)
+            return caravan.FindPartSlot().GetComponent<Part>();
+        else return null;
     }
 
     /*

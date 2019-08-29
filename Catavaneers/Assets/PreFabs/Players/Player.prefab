@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: -2439552489357313636}
   - component: {fileID: 9095232179237126819}
   - component: {fileID: 3770130762307552973}
+  - component: {fileID: 1381744363276612996}
+  - component: {fileID: 2217407531175414976}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -139,6 +141,7 @@ MonoBehaviour:
   speed_fl: 0
   horizontal_ctrl: Horizontal_P1
   Vertical_ctrl: Vertical_P1
+  damage: 0
   collider_part: 
 --- !u!114 &4294453051551149127
 MonoBehaviour:
@@ -152,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e82ce90c25b44cbeb5183d0277291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 0
   Place_Part_str: Place_Part_P1
 --- !u!54 &4294453051551149126
 Rigidbody:
@@ -219,9 +223,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caravan_attach_point: {fileID: 0}
+  enemyManager: {fileID: 0}
   states: 0
   has_part: 0
   isAttached: 0
+  attackInterval: 1
+--- !u!114 &1381744363276612996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294453051551149150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919ab403aed380d408f79e80305b757c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 0
+  health: 0
+--- !u!114 &2217407531175414976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294453051551149150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017062a04a401a54d972b8561912f9c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4294453051852353313
 GameObject:
   m_ObjectHideFlags: 0
