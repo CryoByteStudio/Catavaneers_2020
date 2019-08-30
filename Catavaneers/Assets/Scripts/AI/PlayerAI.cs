@@ -76,7 +76,7 @@ public class PlayerAI : MonoBehaviour
 
     private void Update()
     {
-        has_part = GetComponent<CharacterControl>().has_part;
+        has_part = GetComponent<Character_interaction>().has_part;
 
         if (IsAttached) { AttachSelf(caravan_attach_point); return; }
         else DetachSelf();
@@ -186,7 +186,7 @@ public class PlayerAI : MonoBehaviour
 
     private void PickUpPart()
     {
-        if (!GetComponent<CharacterControl>().has_part)
+        if (!GetComponent<Character_interaction>().has_part)
         {
             self.stoppingDistance = 0.0f;
             self.destination = FindClosestPart();
@@ -195,7 +195,7 @@ public class PlayerAI : MonoBehaviour
 
     private void AttachPartToCaravan()
     {
-        if (GetComponent<CharacterControl>().has_part)
+        if (GetComponent<Character_interaction>().has_part)
         {
             Caravan caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
 
@@ -211,13 +211,13 @@ public class PlayerAI : MonoBehaviour
     #region MOVE WITH CARAVAN
     private void AttachSelf(Transform destination)
     {
-        GetComponent<CharacterControl>().enabled = false;
+        GetComponent<Character_control>().enabled = false;
         transform.position = destination.position;
     }
 
     private void DetachSelf()
     {
-        GetComponent<CharacterControl>().enabled = true;
+        GetComponent<Character_control>().enabled = true;
     }
     #endregion
 

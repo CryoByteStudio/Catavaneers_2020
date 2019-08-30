@@ -9,7 +9,7 @@ public class InteractWithCaravan : MonoBehaviour
     Transform caravan_tf;
     Transform part_slot_tf;
 
-    [SerializeField] string Place_Part_str = "Place_Part_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    [SerializeField] string interact_botton_str = "Place_Part_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
 
     Caravan caravan;
 
@@ -17,7 +17,7 @@ public class InteractWithCaravan : MonoBehaviour
 
     Caravan_Inventory c_inv;
 
-    CharacterControl char_control;
+    Character_interaction char_control;
 
     Health health;
 

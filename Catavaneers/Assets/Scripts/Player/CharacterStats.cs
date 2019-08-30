@@ -12,7 +12,7 @@ public class CharacterStats : MonoBehaviour
     [Range(0.0f, 100.0f)] public float damage_healed_fl = 0f;
     [SerializeField] private float current_HP_fl = 0f;
     [Range(0.0f, 100.0f)] public float rotate_mod_fl = 0f;
-    private CharacterControl current_char;
+    private Character_control current_char;
 
     private float tempHP;
 
@@ -21,7 +21,7 @@ public class CharacterStats : MonoBehaviour
     {
 
         // At the start, it will change the game objects speed to speed mod.
-        current_char = GetComponent<CharacterControl>();
+        current_char = GetComponent<Character_control>();
         
         current_HP_fl = maxHP_fl;
 
