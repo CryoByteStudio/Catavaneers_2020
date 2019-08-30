@@ -6,7 +6,7 @@ public class Character_interaction : MonoBehaviour
 {
     [SerializeField] Transform attach_tf;
     [SerializeField] string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
-    [SerializeField] float damage_fl; //damage player deals
+    [SerializeField] public float damage_fl; //damage player deals
 
     Player_Inventory p_inv;
     public string collider_part;
@@ -93,6 +93,7 @@ public class Character_interaction : MonoBehaviour
         {
             if (Input.GetButtonDown(interact_botton_str))
             {
+                Debug.Log("attack");
                 c.gameObject.GetComponent<Enemy_health>().Take_damage(damage_fl);
             }
         }

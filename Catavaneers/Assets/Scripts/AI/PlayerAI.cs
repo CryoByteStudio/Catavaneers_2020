@@ -81,7 +81,7 @@ public class PlayerAI : MonoBehaviour
         if (IsAttached) { AttachSelf(caravan_attach_point); return; }
         else DetachSelf();
 
-        if (GetComponent<CharacterControl>().player_active_bl)
+        if (GetComponent<Character_control>().player_active_bl)
         {
             self.isStopped = true;
             return;
@@ -273,7 +273,7 @@ public class PlayerAI : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) <= 2.5f && CanAttack())
         {
             timeSinceLastAttack = 0f;
-            assault.DealDamage(target, GetComponent<CharacterControl>().damage);
+            assault.DealDamage(target, GetComponent<Character_interaction>().damage_fl);
         }
     }
 

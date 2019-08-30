@@ -25,6 +25,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject Dog;
     [SerializeField] int maxEnemyCount;
     [SerializeField] float spawnInterval;
+    [SerializeField] bool is_night;
 
     private float timeSinceSpawn = Mathf.Infinity;
 
@@ -47,8 +48,11 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (CanSpawn())
-            SpawnEnemy(random);
+        if (is_night)
+        {
+            if (CanSpawn())
+                SpawnEnemy(random);
+        }
     }
 
     private void SpawnEnemy(bool random)
@@ -105,5 +109,10 @@ public class SpawnManager : MonoBehaviour
         while (x > minX && x < maxX && z > minZ && z < maxZ);
 
         transform.position = new Vector3(x, y, z);
+    }
+
+    public void SetIsNight(bool _is_night)
+    {
+        is_night = _is_night;
     }
 }

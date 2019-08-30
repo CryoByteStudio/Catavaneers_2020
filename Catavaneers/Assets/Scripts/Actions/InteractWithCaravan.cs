@@ -23,7 +23,7 @@ public class InteractWithCaravan : MonoBehaviour
 
     void Start()
     {
-        char_control = GetComponent<CharacterControl>();
+        char_control = GetComponent<Character_interaction>();
         caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
         p_inv = GetComponent<Player_Inventory>();
     }
@@ -47,7 +47,7 @@ public class InteractWithCaravan : MonoBehaviour
 
             health = caravan.GetComponent<Health>();
 
-            if (Input.GetButtonDown(Place_Part_str) && gameObject.tag == "Player")
+            if (Input.GetButtonDown(interact_botton_str) && gameObject.tag == "Player")
             {
                 if (char_control.has_part)
                 {
