@@ -6,16 +6,23 @@ using UnityEngine.AI;
 
 public class PlayerAI : MonoBehaviour
 {
+    #region VARIABLES
     public enum States
     {
-        FixingCaravan, Idle
+        FixingCaravan, Idle, Attack
     }
 
     [SerializeField] public Transform caravan_attach_point;
 
-    NavMeshAgent agent;
+    [SerializeField] EnemyManager enemyManager;
+
+    [SerializeField] int enemyThreshold;
+
+    NavMeshAgent self;
 
     List<GameObject> parts_list;
+
+    List<GameObject> targets_list;
 
     public States states = new States();
 
@@ -29,18 +36,35 @@ public class PlayerAI : MonoBehaviour
         set { isAttached = value; }
     }
 
+    [SerializeField] float attackInterval;
+
+    float timeSinceLastAttack = Mathf.Infinity;
+
+    #endregion
+
+    #region INITIATE
     private void Start()
     {
-        if (!caravan_attach_point)
-            Debug.LogError("No reference to caravan attach point");
         Initiate();
     }
 
     private void Initiate()
     {
+        if (!caravan_attach_point)
+            Debug.LogError("No reference to caravan attach point");
+
+        if (!enemyManager)
+            enemyManager = FindObjectOfType<EnemyManager>();
+
+        if (enemyThreshold == 0) enemyThreshold = 20;
+
+        if (attackInterval == 0f) attackInterval = 1f;
+
         GameObject[] parts = GameObject.FindGameObjectsWithTag("Part");
         parts_list = new List<GameObject>();
-        agent = GetComponent<NavMeshAgent>();
+        targets_list = new List<GameObject>();
+
+        self = GetComponent<NavMeshAgent>();
 
         foreach (GameObject part in parts)
         {
@@ -48,26 +72,44 @@ public class PlayerAI : MonoBehaviour
             parts_list.Add(part);
         }
     }
+    #endregion
 
     private void Update()
     {
-        has_part = GetComponent<CharacterControl>().has_part;
+        has_part = GetComponent<Character_interaction>().has_part;
 
         if (IsAttached) { AttachSelf(caravan_attach_point); return; }
         else DetachSelf();
 
-        if (!GetComponent<CharacterControl>().player_active_bl) Automate();
-    }
-
-    private void Automate()
-    {
-        if (!GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>().isFullPart && (CheckPartsAvailability() || has_part))
+        if (GetComponent<Character_control>().player_active_bl)
         {
-            states = States.FixingCaravan;
+            self.isStopped = true;
+            return;
         }
         else
         {
+            self.isStopped = false;
+        }
+
+        Automate();
+    }
+
+    #region DRIVER
+    private void Automate()
+    {
+        Caravan caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
+
+        if ((!caravan.IsFullPart && (CheckPartsAvailability() || has_part) && enemyManager.GetEnemyCount() < enemyThreshold) || has_part)
+        {
+            states = States.FixingCaravan;
+        }
+        else if (enemyManager.GetEnemyCount() == 0)
+        {
             states = States.Idle;
+        }
+        else
+        {
+            states = States.Attack;
         }
 
         switch (states)
@@ -78,15 +120,22 @@ public class PlayerAI : MonoBehaviour
             case States.Idle:
                 ReturnToCaravan();
                 break;
+            case States.Attack:
+                Attack();
+                break;
         }
     }
+    #endregion
 
+    #region IDLE
     private void ReturnToCaravan()
     {
-        agent.stoppingDistance = 0.0f;
-        agent.destination = caravan_attach_point.position;
+        self.stoppingDistance = 0.0f;
+        self.destination = caravan_attach_point.position;
     }
+    #endregion
 
+    #region FIXING CARAVAN
     private void FixCaravan()
     {
         PickUpPart();
@@ -137,35 +186,103 @@ public class PlayerAI : MonoBehaviour
 
     private void PickUpPart()
     {
-        if (!GetComponent<CharacterControl>().has_part)
+        if (!GetComponent<Character_interaction>().has_part)
         {
-            agent.stoppingDistance = 0.0f;
-            agent.destination = FindClosestPart();
+            self.stoppingDistance = 0.0f;
+            self.destination = FindClosestPart();
         }
     }
 
     private void AttachPartToCaravan()
     {
-        if (GetComponent<CharacterControl>().has_part)
+        if (GetComponent<Character_interaction>().has_part)
         {
             Caravan caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
 
-            agent.stoppingDistance = 5.0f;
-            agent.destination = caravan.transform.position;
+            self.stoppingDistance = 0.0f;
+            self.destination = caravan.transform.position;
 
-            if (Vector3.Distance(transform.position, caravan.transform.position) <= agent.stoppingDistance * 1.5f)
+            if (GetComponent<InteractWithCaravan>().CanInteract)
                 GetComponent<InteractWithCaravan>().AddToCaravan();
         }
     }
+    #endregion
 
+    #region MOVE WITH CARAVAN
     private void AttachSelf(Transform destination)
     {
-        GetComponent<CharacterControl>().enabled = false;
+        GetComponent<Character_control>().enabled = false;
         transform.position = destination.position;
     }
 
     private void DetachSelf()
     {
-        GetComponent<CharacterControl>().enabled = true;
+        GetComponent<Character_control>().enabled = true;
     }
+    #endregion
+
+    #region ATTACK
+    private Transform FindClosestTarget()
+    {
+        // Find target based on game state (******** NOT IMPLEMENTED ********)
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        targets_list.Clear();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            targets_list.Add(enemies[i]);
+        }
+
+        Transform closest_target = null;
+        Vector3 closest_target_position = transform.position;
+        float smallest_distance;
+        float current_distance;
+
+        if (targets_list.Count > 0)
+        {
+            closest_target_position = targets_list[0].transform.position;
+            closest_target = targets_list[0].transform;
+
+            for (int i = 0; i < targets_list.Count; i++)
+            {
+                smallest_distance = Vector3.Distance(transform.position, closest_target_position);
+                current_distance = Vector3.Distance(transform.position, targets_list[i].transform.position);
+
+                if (current_distance < smallest_distance)
+                {
+                    closest_target_position = targets_list[i].transform.position;
+                    closest_target = targets_list[i].transform;
+                }
+            }
+        }
+
+        return closest_target;
+    }
+
+    private void Attack()
+    {
+        Assault assault = GetComponent<Assault>();
+
+        Transform target = FindClosestTarget();
+
+        self.destination = target.position;
+
+        self.stoppingDistance = 1f;
+
+        if (Vector3.Distance(transform.position, target.position) <= 2.5f && CanAttack())
+        {
+            timeSinceLastAttack = 0f;
+            assault.DealDamage(target, GetComponent<Character_interaction>().damage_fl);
+        }
+    }
+
+    private bool CanAttack()
+    {
+        timeSinceLastAttack += Time.deltaTime;
+
+        return timeSinceLastAttack >= attackInterval;
+    }
+
+    #endregion
 }

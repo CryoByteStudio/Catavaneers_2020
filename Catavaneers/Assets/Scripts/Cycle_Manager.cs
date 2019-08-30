@@ -25,6 +25,7 @@ public class Cycle_Manager : MonoBehaviour
     private bool is_done_counting;
     public Caravan caravan_s;
     PlayerAI[] playerAIs;
+    public SpawnManager spawn_manager;
     #endregion
 
 
@@ -33,7 +34,8 @@ public class Cycle_Manager : MonoBehaviour
         current_day_int = 1;
         timer_float = day_timer_float;
         StartDayCycle();
-
+        if(!spawn_manager)
+        spawn_manager = FindObjectOfType<Caravan>().GetComponentInChildren<SpawnManager>();
     }
 
     void Update()
@@ -99,6 +101,8 @@ public class Cycle_Manager : MonoBehaviour
         is_timer_counting = true;
         timer_float = day_timer_float;
         has_caravan_travelled = false;
+        spawn_manager.SetIsNight(false);
+        
     }
 
     /*
@@ -155,7 +159,9 @@ public class Cycle_Manager : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<Caravan>().GetComponentInChildren<Spawner>().Spawn = true;
+            //FindObjectOfType<Caravan>().GetComponentInChildren<SpawnManager>().spawning = true;
+            FindObjectOfType<SpawnManager>().spawning = true;
+            spawn_manager.SetIsNight(true);
         }
 
     }

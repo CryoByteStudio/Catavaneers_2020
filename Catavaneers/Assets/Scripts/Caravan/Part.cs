@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
+    [SerializeField] float health_value = 2f;
+    public float healthValue { get { return health_value; } }
+
     // Property field
     /*
     Purpose:                Finds out if has Player as parent.
@@ -15,7 +18,7 @@ public class Part : MonoBehaviour
     {
         get
         {
-            if (transform.parent && transform.GetComponentInParent<CharacterControl>())
+            if (transform.parent && transform.GetComponentInParent<Character_control>())
             {
                 return true;
             }
