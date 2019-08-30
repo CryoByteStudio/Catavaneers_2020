@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractWithCaravan : MonoBehaviour
 {
+    public bool canInteract;
+    public bool CanInteract { get { return canInteract; } }
     Transform caravan_tf;
     Transform part_slot_tf;
 
@@ -17,9 +19,12 @@ public class InteractWithCaravan : MonoBehaviour
 
     CharacterControl char_control;
 
+    Health health;
+
     void Start()
     {
         char_control = GetComponent<CharacterControl>();
+        caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
         p_inv = GetComponent<Player_Inventory>();
     }
 
@@ -34,11 +39,15 @@ public class InteractWithCaravan : MonoBehaviour
     {
         if (c.gameObject.tag == "Caravan")
         {
+            canInteract = true;
+
             caravan_tf = c.gameObject.transform;
 
             caravan = caravan_tf.GetComponentInParent<Caravan>();
 
-            if (Input.GetButtonDown(Place_Part_str))
+            health = caravan.GetComponent<Health>();
+
+            if (Input.GetButtonDown(Place_Part_str) && gameObject.tag == "Player")
             {
                 if (char_control.has_part)
                 {
@@ -47,6 +56,7 @@ public class InteractWithCaravan : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
+                if (gameObject.name == "Player_2")
                 //if (!char_control.has_part)
                 {
                     RemoveFromCaravan();
@@ -101,6 +111,14 @@ public class InteractWithCaravan : MonoBehaviour
         }
     }
 
+    void OnTriggerExit(Collider c)
+    {
+        if (c.gameObject.tag == "Caravan")
+        {
+            canInteract = false;
+        }
+    }
+
     /*
     Purpose:                Remove object from caravan.
     Effects:                Part's parent is now attach_point of the capsule (capsule is now grandparent!)
@@ -110,14 +128,25 @@ public class InteractWithCaravan : MonoBehaviour
     */
     public void RemoveFromCaravan()
     {
-        Transform part_tf = caravan.FindPartSlot();
-
-        if (part_tf != null)
+        if (caravan.FindPartSlot())
         {
-            part_tf.GetComponent<Part>().Drop();
-            caravan.parts_tf.RemoveLast();
+            Part part = PartToBeRemoved();
+            part.Drop();
+            caravan.parts_tf.Remove(part.transform);
+
+            if (!health)
+                health = caravan.GetComponent<Health>();
+
+            health.Reduce(part.healthValue);
         }
         else Debug.Log("No part attached to caravan");
+    }
+
+    public Part PartToBeRemoved()
+    {
+        if (caravan && caravan.FindPartSlot())
+            return caravan.FindPartSlot().GetComponent<Part>();
+        else return null;
     }
 
     /*
@@ -129,12 +158,14 @@ public class InteractWithCaravan : MonoBehaviour
     */
     public void AddToCaravan()
     {
-        Transform part_tf = transform.GetChild(0).GetChild(0);
+        Part part = transform.GetChild(0).GetChild(0).GetComponent<Part>();
 
-        part_slot_tf = caravan.FindPartSlot(part_tf);
-        part_tf.GetComponent<Part>().AttachTo(part_slot_tf);
+        part_slot_tf = caravan.FindPartSlot(part.transform);
+        part.AttachTo(part_slot_tf);
 
-        caravan.parts_tf.AddFirst(part_tf);
+        caravan.parts_tf.Add(part.transform);
         p_inv.CaravanPart -= 1;
+
+        health.Add(part.healthValue);
     }
 }

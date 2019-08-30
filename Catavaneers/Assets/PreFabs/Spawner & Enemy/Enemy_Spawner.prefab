@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8925640794337819552}
   - component: {fileID: 2355387221150823353}
+  - component: {fileID: 1497202495688200534}
+  - component: {fileID: 4511821127946371161}
   m_Layer: 0
   m_Name: Enemy_Spawner
   m_TagString: Spawner
@@ -39,21 +41,56 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581163381719697846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6c6df2198d08fd43865ff7fecb38bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Difficulty: 0
-  Enemy_1: {fileID: 7960648067919740266, guid: f5b4d797ebc2b944a8c6a3bba5003668, type: 3}
-  Enemy_2: {fileID: 7960648067919740266, guid: f5b4d797ebc2b944a8c6a3bba5003668, type: 3}
-  Enemy_3: {fileID: 7960648067919740266, guid: f5b4d797ebc2b944a8c6a3bba5003668, type: 3}
-  Enemy_4: {fileID: 7960648067919740266, guid: f5b4d797ebc2b944a8c6a3bba5003668, type: 3}
+  enemyType: 0
+  Mouse: {fileID: 7529761849049474910, guid: 7dd72b52e22f96c4a83be008b73eb600, type: 3}
+  Cat: {fileID: 8452793193842334885, guid: f4636e5ed15ae9346a3ece3e50149a4e, type: 3}
+  Dog: {fileID: 6351484980601790782, guid: 7a8fb70a3e411944c9d1ab7b84e3d394, type: 3}
   TotalEnemies: 15
   Spawn: 1
-  SpawnType: 0
+  SpawnType: 2
   WaveTimer: 60
   TotalWaves: 5
+  SpawnDelay: 3
+  SecondsPassed: 0
+  SpawnID: 0
+--- !u!114 &1497202495688200534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581163381719697846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2b00c4e6554294eac71ef5aed3bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4511821127946371161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581163381719697846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab48e89ae00c7c49a6981234810cb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawning: 0
+  random: 0
+  enemyType: 0
+  Mouse: {fileID: 7529761849049474910, guid: 7dd72b52e22f96c4a83be008b73eb600, type: 3}
+  Cat: {fileID: 8452793193842334885, guid: f4636e5ed15ae9346a3ece3e50149a4e, type: 3}
+  Dog: {fileID: 6351484980601790782, guid: 7a8fb70a3e411944c9d1ab7b84e3d394, type: 3}
+  maxEnemyCount: 0
+  spawnInterval: 0
 --- !u!1 &3859516314833088797
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3859516314833088797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.91, y: -1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8925640794337819552}

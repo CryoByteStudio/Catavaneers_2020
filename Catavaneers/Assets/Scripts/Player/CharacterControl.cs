@@ -8,10 +8,12 @@ public class CharacterControl : MonoBehaviour
     [SerializeField] Transform attach_tf;
 
     [SerializeField] public bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
-    public float speed_fl=10f; // speed of the character
+    [SerializeField] public float speed_fl=10f; // speed of the character
 
     [SerializeField] string horizontal_ctrl = "Horizontal_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
     [SerializeField] string Vertical_ctrl = "Vertical_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+
+    [SerializeField] public float damage;
 
     public string collider_part;
 
@@ -42,6 +44,7 @@ public class CharacterControl : MonoBehaviour
 
     void Start()
     {
+        if (damage == 0) damage = 1;
         RB = GetComponent<Rigidbody>();
     }
 

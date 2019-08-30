@@ -104,10 +104,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_2
       objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149150, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149144, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c2453edb91ef804295a2c96d781ae47, type: 2}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -117,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.9
+      value: -21.2
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -159,16 +169,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4294453051551149144, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 60a1a7660df4b134a8e4ff4ab19413bd, type: 2}
-    - target: {fileID: 4294453051551149124, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
-        type: 3}
-      propertyPath: player_active_bl
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149124, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: speed_fl
@@ -183,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Vertical_ctrl
       value: Vertical_P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149125, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149127, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}

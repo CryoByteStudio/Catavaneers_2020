@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_tf: {fileID: 1356671411675450063}
+  cavarane: {fileID: 0}
   smooth_Factor_float: 0.5
   look_At_Player: 0
   player_Follow_cam: {fileID: 754127680}
@@ -103,10 +104,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_3
       objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149150, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149144, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10e6f06200e55a74c817ecfe6b4fb1c8, type: 2}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.7
+      value: -20.8
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -116,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.1
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -160,11 +171,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149124, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
-      propertyPath: player_active_bl
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294453051551149124, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
-        type: 3}
       propertyPath: speed_fl
       value: 10
       objectReference: {fileID: 0}
@@ -177,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Vertical_ctrl
       value: Vertical_P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294453051551149125, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149127, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}

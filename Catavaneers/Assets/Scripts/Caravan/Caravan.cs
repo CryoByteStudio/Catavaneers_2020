@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class Caravan : MonoBehaviour
 {
-    [SerializeField] public LinkedList<Transform> parts_tf;
-    [SerializeField] public int health;
+    [SerializeField] public List<Transform> parts_tf;
     
-    public bool isFullPart
+    public bool IsFullPart
     {
         get { return parts_tf.Count == 12; }
     }
 
     void Start()
     {
-        parts_tf = new LinkedList<Transform>();
+        parts_tf = new List<Transform>();
     }
 
     /*
@@ -41,13 +40,15 @@ public class Caravan : MonoBehaviour
     }
 
     /*
-    Purpose:                Get transform of the last object in the parts_tf linked list of caravan.
-    Effects:                Return transform of the last part in the linked list of parts that are attached to the caravan.
+    Purpose:                //Get a random transform of the object in the parts_tf list of caravan.
+                            Get first element in parts_tf.
+    Effects:                Return transform of the last part in the list of parts that are attached to the caravan.
     Input/Output:           Input N/A. Output part_tf last value or null.
     Global Variables Used:  part_tf (Class InteractWithCaracan).
     */
     public Transform FindPartSlot()
     {
-        return (parts_tf.Count > 0) ? parts_tf.Last.Value : null;
+        //return (parts_tf.Count > 0) ? parts_tf[UnityEngine.Random.Range(0, parts_tf.Count)] : null;
+        return (parts_tf.Count > 0) ? parts_tf[0] : null;
     }
 }

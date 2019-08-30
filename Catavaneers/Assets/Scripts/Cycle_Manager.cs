@@ -155,7 +155,8 @@ public class Cycle_Manager : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<Caravan>().GetComponentInChildren<Spawner>().Spawn = true;
+            //FindObjectOfType<Caravan>().GetComponentInChildren<SpawnManager>().spawning = true;
+            FindObjectOfType<SpawnManager>().spawning = true;
         }
 
     }
