@@ -392,7 +392,7 @@ PrefabInstance:
     - target: {fileID: 7668759949463724984, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
       propertyPath: player_active_bl
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7668759949463724985, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
@@ -408,11 +408,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668759949463724966, guid: 503b549ce50700c4d8fd29004ee02bd5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7668759949463724966, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
@@ -463,6 +458,10 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 681811323, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
+      propertyPath: look_At_Player
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
 --- !u!4 &364503523 stripped
@@ -983,15 +982,14 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 754127679, guid: e02ac57714ea64942bf0692cc5c1e35d, type: 3}
+      propertyPath: look_At_Player
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1356671411675450063, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356671411675450063, guid: e02ac57714ea64942bf0692cc5c1e35d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1356671411675450063, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
@@ -1771,6 +1769,10 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 257403660, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
+      propertyPath: look_At_Player
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3970382512169150141, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
       propertyPath: speed_mod_fl
@@ -1795,16 +1797,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
@@ -1844,6 +1836,11 @@ PrefabInstance:
     - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1922,11 +1919,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 658485191108658853, guid: 5bfcd31ec246e0648ad44bcee2120600,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 658485191108658853, guid: 5bfcd31ec246e0648ad44bcee2120600,
-        type: 3}
       propertyPath: m_LocalPosition.z
       value: 16.3
       objectReference: {fileID: 0}
@@ -1974,6 +1966,10 @@ PrefabInstance:
       propertyPath: cavarane
       value: 
       objectReference: {fileID: 370719085}
+    - target: {fileID: 45567852, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
+      propertyPath: look_At_Player
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
 --- !u!1 &1537904496

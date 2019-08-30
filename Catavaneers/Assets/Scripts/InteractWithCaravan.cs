@@ -7,7 +7,7 @@ public class InteractWithCaravan : MonoBehaviour
     Transform caravan_tf;
     Transform part_slot_tf;
 
-    [SerializeField] string Place_Part_str = "Place_Part_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    [SerializeField] string interact_botton_str = "Place_Part_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
 
     Caravan caravan;
 
@@ -15,11 +15,11 @@ public class InteractWithCaravan : MonoBehaviour
 
     Caravan_Inventory c_inv;
 
-    CharacterControl char_control;
+    Character_interaction char_control;
 
     void Start()
     {
-        char_control = GetComponent<CharacterControl>();
+        char_control = GetComponent<Character_interaction>();
         p_inv = GetComponent<Player_Inventory>();
     }
 
@@ -38,7 +38,7 @@ public class InteractWithCaravan : MonoBehaviour
 
             caravan = caravan_tf.GetComponentInParent<Caravan>();
 
-            if (Input.GetButtonDown(Place_Part_str))
+            if (Input.GetButtonDown(interact_botton_str))
             {
                 if (char_control.has_part)
                 {

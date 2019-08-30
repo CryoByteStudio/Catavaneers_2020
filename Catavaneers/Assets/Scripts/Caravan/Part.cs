@@ -15,7 +15,7 @@ public class Part : MonoBehaviour
     {
         get
         {
-            if (transform.parent && transform.GetComponentInParent<CharacterControl>())
+            if (transform.parent && transform.GetComponentInParent<Character_control>())
             {
                 return true;
             }

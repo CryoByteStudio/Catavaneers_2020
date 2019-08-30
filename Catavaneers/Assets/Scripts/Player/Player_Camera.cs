@@ -20,7 +20,7 @@ public class Player_Camera : MonoBehaviour
 
     // if camera is not set to the player find the player transform again
 
-    public bool look_At_Player = false;
+    public bool look_At_Player = true;
 
     // find the camera in the game
 
