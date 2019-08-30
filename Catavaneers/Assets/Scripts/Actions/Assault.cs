@@ -28,7 +28,10 @@ public class Assault : MonoBehaviour
             {
                 damageDealtToCaravan += amount;
 
-                float healthValue = interact.PartToBeRemoved().healthValue;
+                float healthValue = 0f;
+
+                if (interact.PartToBeRemoved())
+                    healthValue = interact.PartToBeRemoved().healthValue;
 
                 if (damageDealtToCaravan >= healthValue)
                 {

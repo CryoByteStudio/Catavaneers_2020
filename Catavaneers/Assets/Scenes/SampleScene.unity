@@ -494,6 +494,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1581163381719697846, guid: ac59262382d6bb047b7d240ca35c38dc,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 1803821306939941995, guid: ac59262382d6bb047b7d240ca35c38dc,
         type: 3}
       propertyPath: isSpawning
@@ -523,11 +528,6 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnInterval
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1581163381719697846, guid: ac59262382d6bb047b7d240ca35c38dc,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy_Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8925640794337819552, guid: ac59262382d6bb047b7d240ca35c38dc,
         type: 3}
@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 4511821127946371161, guid: ac59262382d6bb047b7d240ca35c38dc,
         type: 3}
       propertyPath: spawnInterval
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4511821127946371161, guid: ac59262382d6bb047b7d240ca35c38dc,
         type: 3}

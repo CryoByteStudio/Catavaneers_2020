@@ -144,7 +144,7 @@ public class InteractWithCaravan : MonoBehaviour
 
     public Part PartToBeRemoved()
     {
-        if (caravan)
+        if (caravan && caravan.FindPartSlot())
             return caravan.FindPartSlot().GetComponent<Part>();
         else return null;
     }
