@@ -18,6 +18,7 @@ public class CharacterControl : MonoBehaviour
 
     Rigidbody RB;
     Player_Inventory p_inv;
+    Tree tree;
 
     void Start()
     {
@@ -108,5 +109,22 @@ public class CharacterControl : MonoBehaviour
         c.GetComponent<Part>().AttachTo(transform.GetChild(0));
         has_object = true;
         p_inv.CaravanPart += 1; //I added this for the sake of inventory ~Silas
+    }
+
+
+
+    /*
+    Purpose:                To collect wood.
+    Effects:                Collects a piece of wood and decreases a tree's hp.
+    Input/Output:           Fire 1.
+    Global Variables Used:  Player_Inventory.wood, Tree.Tree_HP.
+    */
+
+    void OnTriggerStay(Collider c)
+    {
+        if (c.gameObject.tag == "Tree" && Input.GetKeyDown(KeyCode.E)) //Look man, ive tried "Fire 1" but i couldnt seem to get it to work so this'll be a temperary thing until it works ~Silas
+        {
+            p_inv.wood += 1;
+        }
     }
 }

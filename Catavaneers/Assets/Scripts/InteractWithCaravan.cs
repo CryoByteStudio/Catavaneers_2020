@@ -64,6 +64,7 @@ public class InteractWithCaravan : MonoBehaviour
                 if (p_inv.wood > 0)
                 {
                     c_inv.wood += p_inv.wood;
+                    p_inv.Score += 5 * p_inv.wood;
                     p_inv.wood = 0;
                 }
             }

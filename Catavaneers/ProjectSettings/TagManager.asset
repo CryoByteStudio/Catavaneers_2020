@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Part
   - Caravan
+  - Spawner
+  - Tree
   layers:
   - Default
   - TransparentFX

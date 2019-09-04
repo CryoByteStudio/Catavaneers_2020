@@ -10,8 +10,9 @@ public class Player_Inventory : MonoBehaviour
     public int Trap1;
     public int Trap2;
     public int Bandage;
-    public int[] inventory = new int[6];
+    int[] inventory = new int[6];
     bool has_trap;
+    public int Score;
 
     // Start is called before the first frame update
     void Start()
