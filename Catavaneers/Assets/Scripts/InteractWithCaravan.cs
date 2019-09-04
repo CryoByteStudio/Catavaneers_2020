@@ -21,6 +21,7 @@ public class InteractWithCaravan : MonoBehaviour
     {
         char_control = GetComponent<CharacterControl>();
         p_inv = GetComponent<Player_Inventory>();
+        c_inv = FindObjectOfType<Caravan_Inventory>();
     }
 
     /*
@@ -52,21 +53,23 @@ public class InteractWithCaravan : MonoBehaviour
                     RemoveFromCaravan();
                 }
             }
+            
+        }
+
+        // Shop
+
+        if (c.gameObject.tag == "Caravan")
+        {
             /*
             Purpose:                Temporary shop code
             Effects:                Allows Player to buy equipment and bandages from the shop
-            Input/Output:           Keyboard input "T" to deposit wood, "Y" to buy a trap, "U" to buy bandages
+            Input/Output:           Keyboard input 
             Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
                                     Player_Inventory.Bandage, Caravan_Inventory.bandages
             */
-            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.E)) // Feel free to change the button if needed, im just setting it to things hoping forit to work ~Silas
             {
-                if (p_inv.wood > 0)
-                {
-                    c_inv.wood += p_inv.wood;
-                    p_inv.Score += 5 * p_inv.wood;
-                    p_inv.wood = 0;
-                }
+                AddWood();
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -99,6 +102,24 @@ public class InteractWithCaravan : MonoBehaviour
                     c_inv.bandages -= 1;
                 }
             }
+        }
+    }
+
+    /*
+            Purpose:                Adding fuel to the caravan
+            Effects:                Moves the wood from the player inventory to the caravan inventory
+            Input/Output:            
+            Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
+                                    Player_Inventory.Bandage, Caravan_Inventory.bandages
+            */
+
+    private void AddWood()
+    {
+        if (p_inv.wood > 0)
+        {
+            c_inv.wood += p_inv.wood;
+            p_inv.Score += 5 * p_inv.wood;
+            p_inv.wood = 0;
         }
     }
 
