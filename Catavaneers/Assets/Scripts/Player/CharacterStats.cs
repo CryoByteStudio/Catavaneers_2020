@@ -61,6 +61,11 @@ public class CharacterStats : MonoBehaviour
 
     }
 
+    public void ModifySpeed(float speed_fl)
+    {
+        speed_mod_fl += speed_fl;
+    }
+
 
 }
 

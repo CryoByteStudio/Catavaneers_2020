@@ -43,7 +43,7 @@ public class Tree : MonoBehaviour
 
     void OnTriggerStay(Collider c)
     {
-        if (c.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E)) // It's Temporary, look at the character controller for why ~Silas
+        if (c.gameObject.tag == "Player" && Input.GetButtonDown(c.gameObject.GetComponent<Character_interaction>().interact_botton_str))
         {
             Tree_HP -= 1;
         }

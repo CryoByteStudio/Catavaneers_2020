@@ -69,12 +69,12 @@ public class InteractWithCaravan : MonoBehaviour
             Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
                                     Player_Inventory.Bandage, Caravan_Inventory.bandages
             */
-            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            else if (Input.GetButtonDown(char_control.interact_botton_str))
             {
                 if (p_inv.wood > 0)
                 {
                     c_inv.wood += p_inv.wood;
-                    p_inv.Score += 5 * p_inv.wood;
+                    p_inv.Score += 3 * p_inv.wood;
                     p_inv.wood = 0;
                 }
             }

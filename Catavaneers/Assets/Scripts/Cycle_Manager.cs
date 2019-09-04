@@ -26,6 +26,7 @@ public class Cycle_Manager : MonoBehaviour
     public Caravan caravan_s;
     PlayerAI[] playerAIs;
     public SpawnManager spawn_manager;
+    public Caravan_Inventory caravan_inv;
     #endregion
 
 
@@ -86,6 +87,7 @@ public class Cycle_Manager : MonoBehaviour
         {
             ResumeCycle();
         }
+        wood_count = 
 
     }
     /*

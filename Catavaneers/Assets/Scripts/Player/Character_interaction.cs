@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character_interaction : MonoBehaviour
 {
     [SerializeField] Transform attach_tf;
-    [SerializeField] string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    public string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
     [SerializeField] public float damage_fl; //damage player deals
 
     Player_Inventory p_inv;
@@ -96,6 +96,21 @@ public class Character_interaction : MonoBehaviour
                 Debug.Log("attack");
                 c.gameObject.GetComponent<Enemy_health>().Take_damage(damage_fl);
             }
+        }
+    }
+
+    /*
+    Purpose:                To collect wood.
+    Effects:                Collects a piece of wood and decreases a tree's hp.
+    Input/Output:           Fire 1.
+    Global Variables Used:  Player_Inventory.wood, Tree.Tree_HP.
+    */
+
+    void OnTriggerStay(Collider c)
+    {
+        if (c.gameObject.tag == "Tree" && Input.GetButtonDown(interact_botton_str)) //Look man, ive tried "Fire 1" but i couldnt seem to get it to work so this'll be a temperary thing until it works ~Silas
+        {
+            p_inv.wood += 5;
         }
     }
 
