@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class Caravan : MonoBehaviour
 {
-    [SerializeField] public LinkedList<Transform> parts_tf;
-    [SerializeField] public int health;
+    [SerializeField] public List<Transform> parts_tf;
+    
+    public bool IsFullPart
+    {
+        get { return parts_tf.Count == 12; }
+    }
 
     void Start()
     {
-        parts_tf = new LinkedList<Transform>();
+        parts_tf = new List<Transform>();
     }
 
     /*
@@ -25,36 +29,8 @@ public class Caravan : MonoBehaviour
 
         if (words[1] == "part")
         {
-            switch (Int32.Parse(words[2]))
-            {
-                case 1:
-                    return transform.GetChild(0);
-                case 2:
-                    return transform.GetChild(1);
-                case 3:
-                    return transform.GetChild(2);
-                case 4:
-                    return transform.GetChild(3);
-                case 5:
-                    return transform.GetChild(4);
-                case 6:
-                    return transform.GetChild(5);
-                case 7:
-                    return transform.GetChild(6);
-                case 8:
-                    return transform.GetChild(7);
-                case 9:
-                    return transform.GetChild(8);
-                case 10:
-                    return transform.GetChild(9);
-                case 11:
-                    return transform.GetChild(10);
-                case 12:
-                    return transform.GetChild(11);
-                default:
-                    Debug.Log("Can't find part slot...");
-                    return null;
-            }
+            int part_num = Int32.Parse(words[2]);
+            return transform.GetChild(part_num - 1);
         }
         else
         {
@@ -64,13 +40,15 @@ public class Caravan : MonoBehaviour
     }
 
     /*
-    Purpose:                Get transform of the last object in the parts_tf linked list of caravan.
-    Effects:                Return transform of the last part in the linked list of parts that are attached to the caravan.
+    Purpose:                //Get a random transform of the object in the parts_tf list of caravan.
+                            Get first element in parts_tf.
+    Effects:                Return transform of the last part in the list of parts that are attached to the caravan.
     Input/Output:           Input N/A. Output part_tf last value or null.
     Global Variables Used:  part_tf (Class InteractWithCaracan).
     */
     public Transform FindPartSlot()
     {
-        return (parts_tf.Count > 0) ? parts_tf.Last.Value : null;
+        //return (parts_tf.Count > 0) ? parts_tf[UnityEngine.Random.Range(0, parts_tf.Count)] : null;
+        return (parts_tf.Count > 0) ? parts_tf[0] : null;
     }
 }

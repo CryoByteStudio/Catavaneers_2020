@@ -8,13 +8,12 @@ public class Caravan_Inventory : MonoBehaviour
     public int bandages;
     public int traps;
     public int[] inventory = new int[3];
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         /*

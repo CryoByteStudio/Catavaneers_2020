@@ -7,7 +7,7 @@ TagManager:
   - Part
   - Caravan
   - Spawner
-  - Tree
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Terrain
   - 
   - 
   - 
