@@ -242,8 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_active_bl: 0
   speed_fl: 0
-  horizontal_ctrl_str: Horizontal_P1
-  Vertical_ctrl_str: Vertical_P1
+  horizontal_ctrl: Horizontal_P1
+  Vertical_ctrl: Vertical_P1
+  collider_part: 
 --- !u!114 &4294453051551149127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +312,7 @@ MonoBehaviour:
   damage_healed_fl: 0
   current_HP_fl: 0
   rotate_mod_fl: 0
---- !u!114 &3474987099825824186
+--- !u!114 &4208720830622473023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,6 +373,9 @@ MonoBehaviour:
   interact_botton_str: Primary_interact_P1
   damage_fl: 0
   collider_part: 
+  states: 0
+  has_part: 0
+  isAttached: 0
 --- !u!1 &4294453051852353313
 GameObject:
   m_ObjectHideFlags: 0

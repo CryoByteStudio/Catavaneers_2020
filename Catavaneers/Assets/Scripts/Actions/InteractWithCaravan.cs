@@ -9,7 +9,7 @@ public class InteractWithCaravan : MonoBehaviour
     Transform caravan_tf;
     Transform part_slot_tf;
 
-    [SerializeField] string interact_botton_str = "Place_Part_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    [SerializeField] string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
 
     Caravan caravan;
 
@@ -47,7 +47,7 @@ public class InteractWithCaravan : MonoBehaviour
 
             health = caravan.GetComponent<Health>();
 
-            if (Input.GetButtonDown(interact_botton_str) && gameObject.tag == "Player")
+            if (Input.GetButtonDown(interact_botton_str) && gameObject.tag == "Player" && p_inv.CaravanPart!=0)
             {
                 if (char_control.has_part)
                 {
@@ -69,7 +69,7 @@ public class InteractWithCaravan : MonoBehaviour
             Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
                                     Player_Inventory.Bandage, Caravan_Inventory.bandages
             */
-            else if (Input.GetButtonDown(interact_botton_str))
+            else if (Input.GetButtonDown(char_control.interact_botton_str) && p_inv.wood>0)
             {
                 if (p_inv.wood > 0)
                 {
