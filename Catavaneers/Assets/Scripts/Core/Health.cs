@@ -36,7 +36,9 @@ public class Health : MonoBehaviour
         health = Mathf.Max(health - amount, 0);
 
         if (IsDead && gameObject.tag != "Caravan")
+        {
             Die();
+        }
     }
 
     private void Die()
