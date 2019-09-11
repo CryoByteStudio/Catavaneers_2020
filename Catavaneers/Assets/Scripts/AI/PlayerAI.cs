@@ -202,7 +202,7 @@ public class PlayerAI : MonoBehaviour
             self.stoppingDistance = 0.0f;
             self.destination = caravan.transform.position;
 
-            if (GetComponent<InteractWithCaravan>().CanInteract)
+            if (GetComponent<InteractWithCaravan>().can_interact)
                 GetComponent<InteractWithCaravan>().AddToCaravan();
         }
     }

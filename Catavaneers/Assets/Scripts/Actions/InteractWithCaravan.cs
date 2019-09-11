@@ -4,42 +4,42 @@ using UnityEngine;
 
 public class InteractWithCaravan : MonoBehaviour
 {
-    public bool canInteract;
-    public bool CanInteract { get { return canInteract; } }
+    private bool _can_interact;
+    public bool can_interact { get { return _can_interact; } }
     Transform caravan_tf;
     Transform part_slot_tf;
 
-    [SerializeField] string interact_button_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
-
+    private string interact_button_str;
     Caravan caravan;
 
     Player_Inventory p_inv;
 
     Caravan_Inventory c_inv;
 
-    Character_interaction char_control;
+    Character_interaction char_interact;
 
     Health health;
 
     void Start()
     {
-        char_control = GetComponent<Character_interaction>();
+        char_interact = GetComponent<Character_interaction>();
         caravan = GameObject.FindGameObjectWithTag("Caravan").GetComponent<Caravan>();
         p_inv = GetComponent<Player_Inventory>();
+        interact_button_str = char_interact.interact_button_str;
     }
 
     /*
     Purpose:                Interact with caravan (Add and Remove Parts).
     Effects:                Effects from AddToCaravan() and RemoveFromCaravan().
     Input/Output:           Keyboard input "E" to add & "R" to remove. Output N/A.
-    Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_control (Class InteractWithCaravan), 
+    Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_interact (Class InteractWithCaravan), 
                             transform, parts_tf (Class Caravan), transform (Class Part), has_object (Class CharacterControl).
     */
     void OnTriggerStay(Collider c)
     {
         if (c.gameObject.tag == "Caravan")
         {
-            canInteract = true;
+            _can_interact = true;
 
             caravan_tf = c.gameObject.transform;
 
@@ -49,17 +49,9 @@ public class InteractWithCaravan : MonoBehaviour
 
             if (Input.GetButtonDown(interact_button_str) && gameObject.tag == "Player" && p_inv.CaravanPart!=0)
             {
-                if (char_control.has_part)
+                if (char_interact.has_part)
                 {
                     AddToCaravan();
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.R))
-            {
-                if (gameObject.name == "Player_2")
-                //if (!char_control.has_part)
-                {
-                    RemoveFromCaravan();
                 }
             }
             /*
@@ -116,7 +108,7 @@ public class InteractWithCaravan : MonoBehaviour
     {
         if (c.gameObject.tag == "Caravan")
         {
-            canInteract = false;
+            _can_interact = false;
         }
     }
 
@@ -124,7 +116,7 @@ public class InteractWithCaravan : MonoBehaviour
     Purpose:                Remove object from caravan.
     Effects:                Part's parent is now attach_point of the capsule (capsule is now grandparent!)
     Input/Output:           N/A.
-    Global Variables Used:  caravan_tf, parts_tf, caravan, char_control (Class Caravan), transform (Class Part), 
+    Global Variables Used:  caravan_tf, parts_tf, caravan, char_interact (Class Caravan), transform (Class Part), 
                             has_object (Class CharacterControl)
     */
     public void RemoveFromCaravan()
@@ -154,7 +146,7 @@ public class InteractWithCaravan : MonoBehaviour
     Purpose:                Add object to caravan.
     Effects:                Part's parent is now 1 of 12 transforms children of the caravan (caravan is now grandparent!)
     Input/Output:           N/A.
-    Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_control (Class InteractWithCaravan), transform, parts_tf (Class Caravan),
+    Global Variables Used:  caravan_tf, part_slot_tf, caravan, char_interact (Class InteractWithCaravan), transform, parts_tf (Class Caravan),
                             transform (Class Part), has_object (Class CharacterControl), Player_Inventory.CaravanPart,
     */
     public void AddToCaravan()

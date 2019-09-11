@@ -457,6 +457,11 @@ PrefabInstance:
       propertyPath: damage_fl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6041897088073875078, guid: 503b549ce50700c4d8fd29004ee02bd5,
+        type: 3}
+      propertyPath: interact_button_str
+      value: Primary_interact_P2
+      objectReference: {fileID: 0}
     - target: {fileID: 2224961495500416524, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1070,6 +1075,11 @@ PrefabInstance:
     - target: {fileID: 3127209663956572143, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: interact_botton_str
+      value: Primary_interact_P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127209663956572143, guid: e02ac57714ea64942bf0692cc5c1e35d,
+        type: 3}
+      propertyPath: interact_button_str
       value: Primary_interact_P3
       objectReference: {fileID: 0}
     - target: {fileID: 5302240700318044605, guid: e02ac57714ea64942bf0692cc5c1e35d,
@@ -2116,6 +2126,11 @@ PrefabInstance:
       propertyPath: interact_botton_str
       value: Primary_interact_P4
       objectReference: {fileID: 0}
+    - target: {fileID: 3501162927836633989, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: interact_button_str
+      value: Primary_interact_P4
+      objectReference: {fileID: 0}
     - target: {fileID: 45567852, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
       propertyPath: Camera_Ui_Follow_OFF
       value: 
@@ -2725,6 +2740,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3059859427072423023, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+        type: 3}
+      propertyPath: m_Name
+      value: Caravan
+      objectReference: {fileID: 0}
     - target: {fileID: 3059859427072423019, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2780,11 +2800,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3059859427072423023, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-        type: 3}
-      propertyPath: m_Name
-      value: Caravan
-      objectReference: {fileID: 0}
     - target: {fileID: 6068798552804772650, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
         type: 3}
       propertyPath: wood
@@ -2792,6 +2807,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 212f7f0f9b1df8340a2a41c0f983a1ec, type: 3}
+--- !u!114 &2105285874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6068798552804772650, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a1f7fedb598a141a13d82a52ebe380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2746154171441630035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2934,6 +2961,11 @@ PrefabInstance:
       propertyPath: spawn_manager
       value: 
       objectReference: {fileID: 212362923}
+    - target: {fileID: 2746154172173011216, guid: 796cb3a06dece754cbf0bb96898155c7,
+        type: 3}
+      propertyPath: caravan_inv
+      value: 
+      objectReference: {fileID: 2105285874}
     - target: {fileID: 2746154170734197689, guid: 796cb3a06dece754cbf0bb96898155c7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
