@@ -442,15 +442,15 @@ PrefabInstance:
       propertyPath: caravan_attach_point
       value: 
       objectReference: {fileID: 1313415057}
-    - target: {fileID: 2224961495500416524, guid: 503b549ce50700c4d8fd29004ee02bd5,
+    - target: {fileID: 6041897088073875078, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 3
+      propertyPath: interact_botton_str
+      value: Primary_interact_P2
       objectReference: {fileID: 0}
-    - target: {fileID: 3542752007096088788, guid: 503b549ce50700c4d8fd29004ee02bd5,
+    - target: {fileID: 6041897088073875078, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      propertyPath: damage_fl
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
@@ -1047,7 +1047,66 @@ PrefabInstance:
       propertyPath: caravan_attach_point
       value: 
       objectReference: {fileID: 1239445941}
-    - target: {fileID: 5791417616810479278, guid: e02ac57714ea64942bf0692cc5c1e35d,
+    - target: {fileID: 3127209663956572143, guid: e02ac57714ea64942bf0692cc5c1e35d,
+        type: 3}
+      propertyPath: interact_botton_str
+      value: Primary_interact_P3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e02ac57714ea64942bf0692cc5c1e35d, type: 3}
+--- !u!1001 &899672529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8730258142075294335, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_Name
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294335, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730258142075294307, guid: e7915ed8f92051d4e872f4b2dab0a133,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1899,7 +1958,7 @@ PrefabInstance:
     - target: {fileID: 8266804537934612570, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
       propertyPath: player_active_bl
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4963612136800066487, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
@@ -2042,6 +2101,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+    - target: {fileID: 3501162927836633989, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: interact_botton_str
+      value: Primary_interact_P4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
