@@ -43,7 +43,7 @@ public class Tree : MonoBehaviour
 
     void OnTriggerStay(Collider c)
     {
-        if (c.gameObject.tag == "Player" && Input.GetButtonDown(c.gameObject.GetComponent<Character_interaction>().interact_botton_str))
+        if (c.gameObject.tag == "Player" && Input.GetButtonDown(c.gameObject.GetComponent<Character_interaction>().interact_button_str))
         {
             Tree_HP -= 1;
         }

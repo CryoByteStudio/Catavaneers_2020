@@ -37,6 +37,7 @@ public class Cycle_Manager : MonoBehaviour
         StartDayCycle();
         if(!spawn_manager)
         spawn_manager = FindObjectOfType<Caravan>().GetComponentInChildren<SpawnManager>();
+        caravan_inv = FindObjectOfType<Caravan_Inventory>();
     }
 
     void Update()
@@ -68,6 +69,7 @@ public class Cycle_Manager : MonoBehaviour
                 StartDayCycle();
             }
         }
+        wood_count = caravan_inv.wood;
         if(caravan_s.parts_tf.Count == 12)
         {
             is_caravan_whole = true;
@@ -87,7 +89,6 @@ public class Cycle_Manager : MonoBehaviour
         {
             ResumeCycle();
         }
-        wood_count = 0;
 
     }
     /*
