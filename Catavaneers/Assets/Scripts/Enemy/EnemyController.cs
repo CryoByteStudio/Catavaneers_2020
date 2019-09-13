@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+   
     public GameObject[] Player;
     public Transform caravan_tf;
     float MoveSpeed = 4f;
@@ -133,6 +134,8 @@ public class EnemyController : MonoBehaviour
             reachedCaravan = true;
             GetComponent<Assault>().DealDamage(c.transform, damage);
         }
+
+        
     }
 
     private void OnTriggerExit(Collider c)
@@ -142,4 +145,6 @@ public class EnemyController : MonoBehaviour
             //self.isStopped = false;
         }
     }
+
+   
 }

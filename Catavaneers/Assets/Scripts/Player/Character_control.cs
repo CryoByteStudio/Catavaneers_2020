@@ -8,9 +8,11 @@ public class Character_control : MonoBehaviour
     [SerializeField] public bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
 
     public float speed_fl=10f; // speed of the character
+    
 
     [SerializeField] string horizontal_ctrl_str = "Horizontal_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
     [SerializeField] string Vertical_ctrl_str = "Vertical_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+
 
 
 
@@ -50,14 +52,52 @@ public class Character_control : MonoBehaviour
     Input/Output:           Input player control axis // Output N/A
     Global Variables Used:  Raw Axis input
     */
+
+
+ 
     private void movement_arrowKeys()
     {
-        float h_fl = Input.GetAxis(horizontal_ctrl_str);
+        float h_fl = Input.GetAxis(horizontal_ctrl_str);//X axis
         transform.position += Vector3.right * speed_fl * h_fl * Time.deltaTime;
+        
 
-        float v_fl = Input.GetAxis(Vertical_ctrl_str);
+        float v_fl = Input.GetAxis(Vertical_ctrl_str);//Z axis
         transform.position += Vector3.forward * speed_fl * v_fl * Time.deltaTime;
 
+
+        //Edit by Sasha: Added rotation to the player gameobject based on what direction the input is in.
+
+        //Vertical(v_fl) = X axis, Horizontal(h_fl) = Z axis
+
+        if (v_fl > 0 && h_fl==0)//if x+
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }else if(v_fl<0 && h_fl == 0)//if x-
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }else if(v_fl==0 &&h_fl<0)//if Z-
+        {
+            transform.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else if (v_fl == 0 && h_fl > 0)//if Z+
+        {
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+        }else if (v_fl > 0 && h_fl > 0)//ifz+x+
+        {
+            transform.rotation = Quaternion.Euler(0, 45, 0);
+        }
+        else if (v_fl < 0 && h_fl < 0)//ifz-x-
+        {
+            transform.rotation = Quaternion.Euler(0, -135, 0);
+        }
+        else if (v_fl < 0 && h_fl > 0)//ifz-x+
+        {
+            transform.rotation = Quaternion.Euler(0, 135, 0);
+        }
+        else if (v_fl > 0 && h_fl < 0)//ifz+x-
+        {
+            transform.rotation = Quaternion.Euler(0, -45, 0);
+        }
 
     }
 
