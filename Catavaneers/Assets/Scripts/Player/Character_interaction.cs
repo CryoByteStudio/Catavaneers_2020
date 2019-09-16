@@ -94,7 +94,7 @@ public class Character_interaction : MonoBehaviour
             if (Input.GetButtonDown(interact_botton_str))
             {
                 Debug.Log("attack");
-                c.gameObject.GetComponent<Enemy_health>().Take_damage(damage_fl);
+                c.gameObject.GetComponent<Health>().Reduce(damage_fl);
             }
         }
     }

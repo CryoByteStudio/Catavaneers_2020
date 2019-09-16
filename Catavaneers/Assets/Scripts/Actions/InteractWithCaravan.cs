@@ -69,7 +69,7 @@ public class InteractWithCaravan : MonoBehaviour
         // Shop
 
         if (c.gameObject.tag == "Caravan")
-        {
+        { 
             /*
             Purpose:                Temporary shop code
             Effects:                Allows Player to buy equipment and bandages from the shop
@@ -77,7 +77,7 @@ public class InteractWithCaravan : MonoBehaviour
             Global Variables Used:  Player_Inventory.wood, Caravan_Inventory.wood, Player_Inventory.GP, Player_Inventory.Trap1 & Trap2,
                                     Player_Inventory.Bandage, Caravan_Inventory.bandages
             */
-            else if (Input.GetButtonDown(char_control.interact_botton_str))
+            if (Input.GetButtonDown(char_control.interact_botton_str))
             {
                 if (p_inv.wood > 0)
                 {
