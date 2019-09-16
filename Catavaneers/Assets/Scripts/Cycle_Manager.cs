@@ -89,7 +89,7 @@ public class Cycle_Manager : MonoBehaviour
         {
             ResumeCycle();
         }
-        //wood_count = 0;
+        //wood_count = 
 
     }
     /*
