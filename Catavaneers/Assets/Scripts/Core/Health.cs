@@ -6,12 +6,16 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] public float startHealth;
+    [SerializeField] float respawn_time_fl = 10.0f;
+    [SerializeField] float respawn_health_ratio_fl = 1.0f;
 
-    [ReadOnly] public float health;
+    [SerializeField] public float health;
 
     float maxHealth;
 
     public bool IsDead { get { return health <= 0; } }
+    
+    public bool IsIronCat { get { return FindObjectOfType<Cycle_Manager>().iron_cat_bool; } }
 
     public Health(float amount)
     {
@@ -31,21 +35,51 @@ public class Health : MonoBehaviour
         maxHealth = startHealth;
     }
 
+    private void Update()
+    {
+        if (IsDead && gameObject.tag != "Caravan")
+        {
+            Debug.Log(gameObject.name + " is dead");
+            Die();
+        }
+    }
+
     public void Reduce(float amount)
     {
         health = Mathf.Max(health - amount, 0);
+        Debug.Log(gameObject.name + " health = " + health);
 
         if (IsDead && gameObject.tag != "Caravan")
         {
+            Debug.Log(gameObject.name + " is dead");
             Die();
         }
     }
 
     private void Die()
     {
-        gameObject.SetActive(false);
-        FindObjectOfType<EnemyManager>().DestroyEnemy(gameObject);
-        Destroy(gameObject, 0.5f);
+        if(gameObject.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+            FindObjectOfType<EnemyManager>().DestroyEnemy(gameObject);
+            Destroy(gameObject, 0.5f);
+        }
+
+        if(gameObject.tag == "Player")
+        {
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            Transform respanw_position = GetComponent<PlayerAI>().caravan_attach_point;
+            transform.position = respanw_position.position;
+            Debug.Log(gameObject.name + " position is " + transform.position);            
+            if (!IsIronCat) { StartCoroutine(SetActive()); };
+        }
+    }
+
+    IEnumerator SetActive()
+    {
+        SetHealth(startHealth * respawn_health_ratio_fl);
+        yield return new WaitForSeconds(respawn_time_fl);
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
     public void Add(float amount)

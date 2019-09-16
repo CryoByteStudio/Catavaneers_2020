@@ -17,10 +17,7 @@ public class Character_interaction : MonoBehaviour
         p_inv = GetComponent<Player_Inventory>();
     }
 
-    void Update()
-    {
-        
-    }
+    public bool IsPvp { get { return FindObjectOfType<Cycle_Manager>().pvp_bool; } }
 
     // Property field
     /*
@@ -93,8 +90,20 @@ public class Character_interaction : MonoBehaviour
         {
             if (Input.GetButtonDown(interact_botton_str))
             {
-                Debug.Log("attack");
-                c.gameObject.GetComponent<Enemy_health>().Take_damage(damage_fl);
+                Debug.Log("attacking" + c.gameObject.name);
+                c.gameObject.GetComponent<Health>().Reduce(damage_fl);
+            }
+        }
+
+        if (c.gameObject.tag == "Player")
+        {
+            Debug.Log(gameObject.name + " collided with " + c.gameObject.name);
+            Debug.Log("can attack player? " + IsPvp);
+
+            if (Input.GetButtonDown(interact_botton_str))
+            {
+                Debug.Log("attacking" + c.gameObject.name);
+                c.gameObject.GetComponent<Health>().Reduce(damage_fl);
             }
         }
     }

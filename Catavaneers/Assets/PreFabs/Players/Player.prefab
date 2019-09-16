@@ -102,6 +102,8 @@ MonoBehaviour:
   smooth_Factor_float: 0.5
   look_At_Player: 1
   player_Follow_cam: {fileID: 5119007388142485015}
+  Camera_Ui_Follow_OFF: {fileID: 0}
+  Camera_Ui_Follow_ON: {fileID: 0}
 --- !u!1 &4294453051551149150
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,13 +122,13 @@ GameObject:
   - component: {fileID: 4294453051551149126}
   - component: {fileID: -2439552489357313636}
   - component: {fileID: 9095232179237126819}
-  - component: {fileID: 3474987099825824186}
   - component: {fileID: 1381744363276612996}
   - component: {fileID: 2217407531175414976}
   - component: {fileID: -9066520497900523142}
+  - component: {fileID: 4208720830622473023}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,9 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_active_bl: 0
   speed_fl: 0
-  horizontal_ctrl: Horizontal_P1
-  Vertical_ctrl: Vertical_P1
-  collider_part: 
+  horizontal_ctrl_str: Horizontal_P1
+  Vertical_ctrl_str: Vertical_P1
 --- !u!114 &4294453051551149127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +294,7 @@ MonoBehaviour:
   Trap1: 0
   Trap2: 0
   Bandage: 0
-  inventory: 000000000000000000000000000000000000000000000000
+  Score: 0
 --- !u!114 &9095232179237126819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,25 +313,6 @@ MonoBehaviour:
   damage_healed_fl: 0
   current_HP_fl: 0
   rotate_mod_fl: 0
---- !u!114 &4208720830622473023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4294453051551149150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c98a7983512b74b9dffc6d11b3a2da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caravan_attach_point: {fileID: 0}
-  enemyManager: {fileID: 0}
-  enemyThreshold: 0
-  states: 0
-  has_part: 0
-  isAttached: 0
-  attackInterval: 1
 --- !u!114 &1381744363276612996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919ab403aed380d408f79e80305b757c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 0
+  startHealth: 10
+  respawn_time_fl: 2
+  respawn_health_ratio_fl: 1
   health: 0
 --- !u!114 &2217407531175414976
 MonoBehaviour:
@@ -369,13 +353,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab607ede297d7e4ea3fdb92e09881eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attach_tf: {fileID: 0}
+  attach_tf: {fileID: 4294453051852353312}
   interact_botton_str: Primary_interact_P1
-  damage_fl: 0
+  damage_fl: 1
   collider_part: 
+--- !u!114 &4208720830622473023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294453051551149150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c98a7983512b74b9dffc6d11b3a2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caravan_attach_point: {fileID: 0}
+  enemyManager: {fileID: 0}
+  enemyThreshold: 0
   states: 0
   has_part: 0
   isAttached: 0
+  attackInterval: 1
 --- !u!1 &4294453051852353313
 GameObject:
   m_ObjectHideFlags: 0
