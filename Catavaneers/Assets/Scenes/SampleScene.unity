@@ -346,12 +346,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 977355902}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &233841285 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9171150364845943216, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 2105285873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &290747454 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 730944814, guid: 796cb3a06dece754cbf0bb96898155c7,
@@ -429,7 +423,7 @@ PrefabInstance:
         type: 3}
       propertyPath: caravan_attach_point
       value: 
-      objectReference: {fileID: 1313415057}
+      objectReference: {fileID: 402365210}
     - target: {fileID: 2450791781993265085, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
       propertyPath: Camera_Ui_Follow_OFF
@@ -440,6 +434,11 @@ PrefabInstance:
       propertyPath: Camera_Ui_Follow_ON
       value: 
       objectReference: {fileID: 290747454}
+    - target: {fileID: 3444373819298073951, guid: 503b549ce50700c4d8fd29004ee02bd5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 503b549ce50700c4d8fd29004ee02bd5, type: 3}
 --- !u!4 &364503523 stripped
@@ -576,6 +575,12 @@ MonoBehaviour:
   IsOverTime: 1
   trap_duration: 2
   trap_impact: 10
+--- !u!4 &402365210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3901425084138181214, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &431911073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8204265048349162909, guid: e96f4e702713ae0418318f6f18f2ee18,
@@ -1034,7 +1039,7 @@ PrefabInstance:
         type: 3}
       propertyPath: caravan_attach_point
       value: 
-      objectReference: {fileID: 1239445941}
+      objectReference: {fileID: 2069968767}
     - target: {fileID: 6538597571298287316, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: Camera_Ui_Follow_OFF
@@ -1045,6 +1050,16 @@ PrefabInstance:
       propertyPath: Camera_Ui_Follow_ON
       value: 
       objectReference: {fileID: 1046053517}
+    - target: {fileID: 1356671411675450065, guid: e02ac57714ea64942bf0692cc5c1e35d,
+        type: 3}
+      propertyPath: player_active_bl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301637865742410806, guid: e02ac57714ea64942bf0692cc5c1e35d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02ac57714ea64942bf0692cc5c1e35d, type: 3}
 --- !u!1 &880867006 stripped
@@ -1868,23 +1883,11 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1162101862}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1239445941 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8976563009886136253, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 2105285873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1248413829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7735425124451562598, guid: 14ae8f926ae77194aa2ef142df98e83a,
     type: 3}
   m_PrefabInstance: {fileID: 1554180297}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1313415057 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2233673827569409911, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 2105285873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1363897815
 PrefabInstance:
@@ -1936,7 +1939,7 @@ PrefabInstance:
     - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8266804537934612548, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
@@ -1957,7 +1960,7 @@ PrefabInstance:
         type: 3}
       propertyPath: caravan_attach_point
       value: 
-      objectReference: {fileID: 1781765170}
+      objectReference: {fileID: 1672404004}
     - target: {fileID: 733223953, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
       propertyPath: knockbackforce
       value: 10
@@ -1972,8 +1975,19 @@ PrefabInstance:
       propertyPath: Camera_Ui_Follow_OFF
       value: 
       objectReference: {fileID: 162017817}
+    - target: {fileID: 3970382512169150141, guid: 1da87dda73fb7874fa6574e278d3bc8a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
+--- !u!4 &1464332778 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4972878000998599712, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468617193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4190223741562049148, guid: 6b38fdb685866ae4ca33ed469d5d7a27,
@@ -2080,7 +2094,7 @@ PrefabInstance:
         type: 3}
       propertyPath: caravan_attach_point
       value: 
-      objectReference: {fileID: 233841285}
+      objectReference: {fileID: 1464332778}
     - target: {fileID: 4705547366101652158, guid: 5bfcd31ec246e0648ad44bcee2120600,
         type: 3}
       propertyPath: Camera_Ui_Follow_OFF
@@ -2091,6 +2105,16 @@ PrefabInstance:
       propertyPath: Camera_Ui_Follow_ON
       value: 
       objectReference: {fileID: 107923525}
+    - target: {fileID: 658485191108658875, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: player_active_bl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513355907897944156, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bfcd31ec246e0648ad44bcee2120600, type: 3}
 --- !u!1 &1537904496
@@ -2133,7 +2157,7 @@ Transform:
   - {fileID: 1729322688}
   - {fileID: 1248413829}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1554180297
 PrefabInstance:
@@ -2349,6 +2373,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1672404004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014164925805258556, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1693216127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2428,12 +2458,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8274712626083033336, guid: 2f6c406939a76fe46876c49d40f75c58,
     type: 3}
   m_PrefabInstance: {fileID: 1873413527}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1781765170 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2855382711407624189, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 2105285873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1873413527
 PrefabInstance:
@@ -2653,6 +2677,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2069968767 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2285133742364730322, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2105285873
 PrefabInstance:
   m_ObjectHideFlags: 0
