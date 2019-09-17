@@ -14,6 +14,8 @@ public class PlayerAI : MonoBehaviour
 
     [SerializeField] public Transform caravan_attach_point;
 
+    [SerializeField] public Transform PVP_Attach_Point;
+
     [SerializeField] EnemyManager enemyManager;
 
     [SerializeField] int enemyThreshold;
@@ -36,9 +38,13 @@ public class PlayerAI : MonoBehaviour
         set { isAttached = value; }
     }
 
+    private bool isPVPStart = false;
+
     [SerializeField] float attackInterval;
 
     float timeSinceLastAttack = Mathf.Infinity;
+
+    private Cycle_Manager _Cycle_Manager_in_PlayerAI;
 
     #endregion
 
@@ -46,6 +52,7 @@ public class PlayerAI : MonoBehaviour
     private void Start()
     {
         Initiate();
+        _Cycle_Manager_in_PlayerAI = GameObject.Find("UI").GetComponent<Cycle_Manager>();
     }
 
     private void Initiate()
@@ -71,8 +78,11 @@ public class PlayerAI : MonoBehaviour
             part.transform.parent = null;
             parts_list.Add(part);
         }
+
     }
     #endregion
+
+    
 
     private void Update()
     {
@@ -92,6 +102,13 @@ public class PlayerAI : MonoBehaviour
         }
 
         Automate();
+
+        if (_Cycle_Manager_in_PlayerAI.is_PVP == true && isPVPStart == false)
+        {
+            MoveToPvP();
+            isPVPStart = true;
+        }
+        
     }
 
     #region DRIVER
@@ -284,5 +301,13 @@ public class PlayerAI : MonoBehaviour
         return timeSinceLastAttack >= attackInterval;
     }
 
+    #endregion
+
+    #region PVP START POINT
+    private void MoveToPvP()
+    {
+        self.stoppingDistance = 0.0f;
+        self.destination = PVP_Attach_Point.position;
+    }
     #endregion
 }

@@ -20,6 +20,8 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private float end_distance_float =200f;
     [SerializeField] private float dist_travelled_float = 0f;
 
+    [SerializeField] public bool is_PVP = false;
+
     private float timer_float;
     private bool is_timer_counting;
     private bool is_done_counting;
