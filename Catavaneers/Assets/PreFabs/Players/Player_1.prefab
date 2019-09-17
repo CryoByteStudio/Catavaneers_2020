@@ -51,10 +51,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.02
-    y: 0.51
-    width: 0.35
-    height: 0.45
+    x: 0
+    y: 0.5
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 6.566502
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_tf: {fileID: 8266804537934612548}
+  attach_Pont: {fileID: 0}
   cavarane: {fileID: 0}
   smooth_Factor_float: 1
   look_At_Player: 1
@@ -197,8 +198,7 @@ PrefabInstance:
       propertyPath: m_AngularSpeed
       value: 1000
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4208720830622473023, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}
 --- !u!1 &8266804537934612544 stripped
 GameObject:

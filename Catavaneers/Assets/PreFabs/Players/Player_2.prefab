@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681811322}
-  m_LocalRotation: {x: -0.43600813, y: -0.31837484, z: 0.16831182, w: -0.8247458}
-  m_LocalPosition: {x: -37.199997, y: 83, z: -40.96}
+  m_LocalRotation: {x: -0.43443322, y: -0.32598358, z: 0.17233415, w: -0.8217685}
+  m_LocalPosition: {x: -38.4, y: 83, z: -40.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7668759949463724966}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 57.121002, y: 27.266, z: 5.971}
+  m_LocalEulerAnglesHint: {x: 55.727, y: 43.275, z: 0}
 --- !u!20 &681811324
 Camera:
   m_ObjectHideFlags: 0
@@ -51,10 +51,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.63
-    y: 0.51
-    width: 0.35
-    height: 0.45
+    x: 0.5
+    y: 0.5
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 6.566502
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_tf: {fileID: 7668759949463724966}
+  attach_Pont: {fileID: 0}
   cavarane: {fileID: 0}
   smooth_Factor_float: 1
   look_At_Player: 1
@@ -212,8 +213,7 @@ PrefabInstance:
       propertyPath: Place_Part_str
       value: Place_Part_P2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4208720830622473023, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}
 --- !u!1 &7668759949463724962 stripped
 GameObject:

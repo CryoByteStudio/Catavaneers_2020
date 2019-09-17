@@ -51,10 +51,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.02
-    y: 0.03
-    width: 0.35
-    height: 0.45
+    x: 0
+    y: 0
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 6.566502
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_tf: {fileID: 1356671411675450063}
+  attach_Pont: {fileID: 0}
   cavarane: {fileID: 0}
   smooth_Factor_float: 1
   look_At_Player: 1
