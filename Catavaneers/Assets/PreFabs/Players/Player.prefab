@@ -323,6 +323,7 @@ MonoBehaviour:
   strText: {fileID: 0}
   speedText: {fileID: 0}
   hpText: {fileID: 0}
+  rotate_mod_fl: 0
 --- !u!114 &3474987099825824186
 MonoBehaviour:
   m_ObjectHideFlags: 0

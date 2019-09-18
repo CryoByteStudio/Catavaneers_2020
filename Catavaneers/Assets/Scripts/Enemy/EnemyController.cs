@@ -145,6 +145,4 @@ public class EnemyController : MonoBehaviour
             //self.isStopped = false;
         }
     }
-
-   
 }

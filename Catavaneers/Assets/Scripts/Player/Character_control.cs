@@ -2,21 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Character_control : MonoBehaviour
 {
     [SerializeField] public bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
 
-    public float speed_fl=10f; // speed of the character   
-
+    public float speed_fl=10f; // speed of the character
     [SerializeField] string horizontal_ctrl_str = "Horizontal_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
     [SerializeField] string Vertical_ctrl_str = "Vertical_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    [SerializeField] string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
 
+    private Button _button;
+
+    CharacterStats playerStats;
     Rigidbody RB;
+
+    public int choice = 0;
+
+
 
     void Start()
     {
         RB = GetComponent<Rigidbody>();
+        playerStats = GetComponent<CharacterStats>();
+        _button = GetComponent<Button>();
     }
 
 
@@ -26,6 +36,17 @@ public class Character_control : MonoBehaviour
         //movement_clickToMove();
 
         if (player_active_bl) movement_arrowKeys();
+
+
+        if (playerStats.statMenuOpen == true)
+        {
+            if (Input.GetButtonDown(interact_botton_str))
+            {
+                
+            }
+
+        }
+
     }
 
     /*
@@ -108,6 +129,8 @@ public class Character_control : MonoBehaviour
             GetComponent<NavMeshAgent>().destination = hit.point;
         }
     }
+
+
 
 
 }

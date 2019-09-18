@@ -8,8 +8,6 @@ public class Game_Manager : MonoBehaviour
 {
     static Game_Manager _instance = null;
     private Button[] buttons;
-
-
     // Start is called before the first frame update
     void Start()
     {

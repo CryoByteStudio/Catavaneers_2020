@@ -10,7 +10,8 @@ public class Player_Inventory : MonoBehaviour
     public int Trap1;
     public int Trap2;
     public int Bandage;
-    int[] inventory = new int[6];
+    public int Weapon;
+    int[] inventory = new int[7];
     bool has_trap;
     public int Score;
 
@@ -55,6 +56,7 @@ public class Player_Inventory : MonoBehaviour
         inventory[3] = Trap1;
         inventory[4] = Trap2;
         inventory[5] = Bandage;
+        inventory[6] = Weapon;
 
         //Not sure if we'll ever use this but i wanted to add it just in case
         if (inventory[3] == 1 || inventory[4] == 1)
