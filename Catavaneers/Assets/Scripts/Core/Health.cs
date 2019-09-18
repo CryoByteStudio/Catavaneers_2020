@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] public float health;
 
-    float maxHealth;
+    public float maxHealth;
 
     public bool IsDead { get { return health <= 0; } }
     

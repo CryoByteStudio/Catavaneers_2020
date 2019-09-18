@@ -110,24 +110,6 @@ public class Character_interaction : MonoBehaviour
         }
     }
 
-    /*
-    Purpose:                - Check for collision with c.gameObject 
-                            - If collided with object with tag "Enemy" then deal damage to enemy.
-    Effects:                - Deal damage to enemy.
-    Input/Output:           Input Collider c. ; damage_fl ; interact_botton_str ; Output N/A.
-    Global Variables Used:  damage_fl.
-    */
-    private void OnCollisionStay(Collision c)
-    {
-        if (c.gameObject.tag == "Enemy")
-        {
-            if (Input.GetButtonDown(interact_botton_str))
-            {
-                Debug.Log("attack");
-                c.gameObject.GetComponent<Enemy_health>().Take_damage(damage_fl);
-            }
-        }
-    }
 
     /*
     Purpose:                To collect wood.
