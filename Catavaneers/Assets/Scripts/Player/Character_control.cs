@@ -7,14 +7,10 @@ public class Character_control : MonoBehaviour
 {
     [SerializeField] public bool player_active_bl; //set in inspector to true or false acordingly if you want manual control of the player
 
-    public float speed_fl=10f; // speed of the character
-    
+    public float speed_fl=10f; // speed of the character   
 
     [SerializeField] string horizontal_ctrl_str = "Horizontal_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
     [SerializeField] string Vertical_ctrl_str = "Vertical_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
-
-
-
 
     Rigidbody RB;
 
@@ -51,10 +47,7 @@ public class Character_control : MonoBehaviour
     Effects:                Move along the axis acording to the input given.
     Input/Output:           Input player control axis // Output N/A
     Global Variables Used:  Raw Axis input
-    */
-
-
- 
+    */ 
     private void movement_arrowKeys()
     {
         float h_fl = Input.GetAxis(horizontal_ctrl_str);//X axis
@@ -64,14 +57,13 @@ public class Character_control : MonoBehaviour
         float v_fl = Input.GetAxis(Vertical_ctrl_str);//Z axis
         transform.position += Vector3.forward * speed_fl * v_fl * Time.deltaTime;
 
-
         //Edit by Sasha: Added rotation to the player gameobject based on what direction the input is in.
 
         //Vertical(v_fl) = X axis, Horizontal(h_fl) = Z axis
 
         if (v_fl > 0 && h_fl==0)//if x+
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         }else if(v_fl<0 && h_fl == 0)//if x-
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);

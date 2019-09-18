@@ -312,17 +312,16 @@ PrefabInstance:
       propertyPath: m_AngularSpeed
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 2574003881881727534, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}
 --- !u!1 &8266804537934612544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4294453051551149150, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 5269599286380880926}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8266804537934612548 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4294453051551149146, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
     type: 3}
   m_PrefabInstance: {fileID: 5269599286380880926}
   m_PrefabAsset: {fileID: 0}

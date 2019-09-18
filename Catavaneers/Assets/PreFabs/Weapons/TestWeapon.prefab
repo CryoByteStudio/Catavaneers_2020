@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4018398744891169444}
   - component: {fileID: 5093581705494914161}
   - component: {fileID: 7557943053021399723}
+  - component: {fileID: 2439611020100909723}
   - component: {fileID: 9025979873745935210}
   m_Layer: 0
   m_Name: TestWeapon
@@ -94,6 +95,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackforce: 10
   kbpoint: {fileID: 8715674382994515731}
+--- !u!114 &2439611020100909723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131296183533599075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b1b8857f973a64ca09d181dd42eec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage_fl: 2
 --- !u!136 &9025979873745935210
 CapsuleCollider:
   m_ObjectHideFlags: 0

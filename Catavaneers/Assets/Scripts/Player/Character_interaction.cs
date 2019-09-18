@@ -1,15 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Character_interaction : MonoBehaviour
 {
-    [SerializeField] Transform attach_tf;
-    public string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    #region variables
+    [SerializeField] Transform attach_tf; //attach point prfab in the player
     [SerializeField] public float damage_fl; //damage player deals
+    [SerializeField] GameObject Weapon; //weapon refab attached to player
+    [SerializeField] float attack_speed_fl; //attack speed of player
 
+    public string interact_botton_str = "Primary_interact_P1"; //replace P1 in inspecter with P2, P3, P4 acordingly
+    private float last_attack; //time since last attack
     Player_Inventory p_inv;
     public string collider_part;
+    #endregion
 
 
     void Start()
@@ -17,10 +23,34 @@ public class Character_interaction : MonoBehaviour
         p_inv = GetComponent<Player_Inventory>();
     }
 
-    void Update()
+    private void Update()
     {
-        
+        last_attack += Time.deltaTime;
+
+        if (Input.GetButtonDown(interact_botton_str) && !has_part)
+        {
+            Attack_Behaviour();
+        }
     }
+
+    private void Attack_Behaviour()
+    {
+        if (last_attack > attack_speed_fl)
+        {
+            Weapon.SetActive(true);
+            last_attack = 0;
+            StartCoroutine(weapon_put_away());
+        }
+
+    }
+
+    IEnumerator weapon_put_away()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Weapon.SetActive(false);
+    }
+
+
 
     // Property field
     /*
@@ -29,6 +59,7 @@ public class Character_interaction : MonoBehaviour
     Input/Output:           Input N/A. Output true/false.
     Global Variables Used:  No variable was altered.
     */
+
     public bool has_part
     {
         get
@@ -77,25 +108,6 @@ public class Character_interaction : MonoBehaviour
         else if (has_part)
         {
             Debug.Log(transform.name + " is holding a part");
-        }
-    }
-
-    /*
-    Purpose:                - Check for collision with c.gameObject 
-                            - If collided with object with tag "Enemy" then deal damage to enemy.
-    Effects:                - Deal damage to enemy.
-    Input/Output:           Input Collider c. ; damage_fl ; interact_botton_str ; Output N/A.
-    Global Variables Used:  damage_fl.
-    */
-    private void OnCollisionStay(Collision c)
-    {
-        if (c.gameObject.tag == "Enemy")
-        {
-            if (Input.GetButtonDown(interact_botton_str))
-            {
-                Debug.Log("attack");
-                c.gameObject.GetComponent<Enemy_health>().Take_damage(damage_fl);
-            }
         }
     }
 

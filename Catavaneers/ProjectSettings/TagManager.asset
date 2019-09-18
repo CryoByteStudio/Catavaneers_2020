@@ -8,6 +8,8 @@ TagManager:
   - Caravan
   - Spawner
   - Enemy
+  - Tree
+  - Weapon
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,8 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private bool has_caravan_travelled;
     [SerializeField] private float end_distance_float =200f;
     [SerializeField] private float dist_travelled_float = 0f;
+    [SerializeField] public bool iron_cat_bool;
+    [SerializeField] public bool pvp_bool;
 
     [SerializeField] public bool is_PVP = false;
 
