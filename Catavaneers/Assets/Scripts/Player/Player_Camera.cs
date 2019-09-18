@@ -6,8 +6,13 @@ public class Player_Camera : MonoBehaviour
 {
     //find player in game
 
+    public GameObject player_In_Cam;
+
     public Transform player_tf;
 
+    [SerializeField]
+    private Transform attach_point;
+ 
     [SerializeField]
     private Transform cavarane;
 
@@ -59,4 +64,12 @@ public class Player_Camera : MonoBehaviour
             player_Follow_cam.enabled = false;
         }
     }
+
+    public void NightStart()
+    {
+        player_tf.position = attach_point.position;
+        transform_Player_At_Night = false;
+    }
+
+    
 }
