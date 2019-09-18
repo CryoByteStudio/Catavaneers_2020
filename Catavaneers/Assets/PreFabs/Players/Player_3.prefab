@@ -123,15 +123,25 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2574003881881727534, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4294453051551149127, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: interact_botton_str
       value: Primary_interact_P3
       objectReference: {fileID: 0}
-    - target: {fileID: 5119007388142485015, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+    - target: {fileID: 9095232179237126819, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0.02
+      propertyPath: horizontal_ctrl_str
+      value: Horizontal_P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095232179237126819, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: interact_botton_str
+      value: Primary_interact_P3
       objectReference: {fileID: 0}
     - target: {fileID: 3474987099825824186, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
@@ -139,10 +149,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1497202495688200534, guid: ac59262382d6bb047b7d240ca35c38dc,
         type: 3}
-    - target: {fileID: 2574003881881727534, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+    - target: {fileID: 5119007388142485015, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086645799093277275, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853e7d7e9b6839d4fbeb14ed8d6d15ab, type: 3}

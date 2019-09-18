@@ -279,8 +279,7 @@ public class PlayerAI : MonoBehaviour
 
     private void Attack()
     {
-        Assault assault = GetComponent<Assault>();
-
+        Character_interaction character_Interaction = GetComponent<Character_interaction>();
         Transform target = FindClosestTarget();
 
         self.destination = target.position;
@@ -290,7 +289,7 @@ public class PlayerAI : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) <= 2.5f && CanAttack())
         {
             timeSinceLastAttack = 0f;
-            assault.DealDamage(target, GetComponent<Character_interaction>().damage_fl);
+            character_Interaction.Attack_Behaviour();
         }
     }
 
