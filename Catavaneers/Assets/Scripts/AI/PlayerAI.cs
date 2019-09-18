@@ -289,7 +289,7 @@ public class PlayerAI : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) <= 2.5f && CanAttack())
         {
             timeSinceLastAttack = 0f;
-            character_Interaction.Attack_Behaviour();
+            //character_Interaction.Attack_Behaviour();
         }
     }
 

@@ -10,8 +10,10 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private Text day_counter_text;
     [SerializeField] private float day_timer_float;
     [SerializeField] private float night_timer_float;
+    [SerializeField] private float pvp_timer_float;
     [SerializeField] public bool is_day;
     [SerializeField] private bool is_night;
+    [SerializeField] public bool is_PVP = false;
     [SerializeField] public int current_day_int;
     [SerializeField] private int max_day_int;
     [SerializeField] private int wood_count;
@@ -22,7 +24,6 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] public bool iron_cat_bool;
     [SerializeField] public bool pvp_bool;
 
-    [SerializeField] public bool is_PVP = false;
 
     private float timer_float;
     private bool is_timer_counting;
@@ -47,8 +48,10 @@ public class Cycle_Manager : MonoBehaviour
     {
         if (is_day)
             day_counter_text.text = "Day: " + current_day_int.ToString();
-        else
+        else if(is_night)
             day_counter_text.text = "Night: " + current_day_int.ToString();
+        else if(is_PVP)
+            day_counter_text.text = "CAT FIGHT";
         if (timer_float >= 0.0f && is_timer_counting)
         {
             timer_float -= Time.deltaTime;
@@ -72,6 +75,10 @@ public class Cycle_Manager : MonoBehaviour
                 StartDayCycle();
             }
         }
+        else if(timer_float<= 0.0f && is_PVP)
+        {
+            StartPVPCycle();
+        }
         if(caravan_s.parts_tf.Count == 12)
         {
             is_caravan_whole = true;
@@ -91,7 +98,7 @@ public class Cycle_Manager : MonoBehaviour
         {
             ResumeCycle();
         }
-        wood_count = 0;
+        wood_count = caravan_inv.wood;
 
     }
     /*
@@ -145,6 +152,10 @@ public class Cycle_Manager : MonoBehaviour
          //   playerAIs[i].DetachSelf();
             playerAIs[i].IsAttached = false;
         }
+        if(dist_travelled_float >= end_distance_float)
+        {
+            StartPVPCycle();
+        }
     }
 
     /*
@@ -171,6 +182,14 @@ public class Cycle_Manager : MonoBehaviour
             spawn_manager.SetIsNight(true);
         }
 
+    }
+
+    void StartPVPCycle()
+    {
+        is_PVP = true;
+        is_night = false;
+        is_day = false;
+        timer_float = pvp_timer_float;
     }
 
     /*
