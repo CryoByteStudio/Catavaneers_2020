@@ -68,7 +68,7 @@ public class Player_Camera : MonoBehaviour
     public void NightStart()
     {
         player_tf.position = attach_point.position;
-        //transform_Player_At_Night = false;
+        transform_Player_At_Night = false;
     }
 
     

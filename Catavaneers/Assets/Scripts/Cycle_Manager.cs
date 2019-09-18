@@ -10,7 +10,6 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private Text day_counter_text;
     [SerializeField] private float day_timer_float;
     [SerializeField] private float night_timer_float;
-    [SerializeField] private float pvp_timer_float;
     [SerializeField] public bool is_day;
     [SerializeField] private bool is_night;
     [SerializeField] public int current_day_int;
@@ -48,12 +47,8 @@ public class Cycle_Manager : MonoBehaviour
     {
         if (is_day)
             day_counter_text.text = "Day: " + current_day_int.ToString();
-        else if(is_night)
+        else
             day_counter_text.text = "Night: " + current_day_int.ToString();
-        else if (is_PVP)
-        {
-            day_counter_text.text = "CAT FIGHT";
-        }
         if (timer_float >= 0.0f && is_timer_counting)
         {
             timer_float -= Time.deltaTime;
@@ -77,10 +72,6 @@ public class Cycle_Manager : MonoBehaviour
                 StartDayCycle();
             }
         }
-        else if (timer_float <= 0.0f && is_PVP)
-        {
-            StartPVPCycle();
-        }
         if(caravan_s.parts_tf.Count == 12)
         {
             is_caravan_whole = true;
@@ -100,7 +91,7 @@ public class Cycle_Manager : MonoBehaviour
         {
             ResumeCycle();
         }
-        wood_count = caravan_inv.wood;
+        wood_count = 0;
 
     }
     /*
@@ -182,14 +173,6 @@ public class Cycle_Manager : MonoBehaviour
 
     }
 
-    void StartPVPCycle()
-    {
-        is_PVP = true;
-        is_day = false;
-        is_night = false;
-        timer_float = pvp_timer_float;
-    }
-
     /*
     Purpose: Moves the caravan.
     Effects: move caravan to new location, removes wood from caravan.
@@ -202,9 +185,5 @@ public class Cycle_Manager : MonoBehaviour
                                                                  FindObjectOfType<Caravan>().transform.position.y, FindObjectOfType<Caravan>().transform.position.z);
         has_caravan_travelled = true;
         wood_count -= 100;
-        if (FindObjectOfType<Caravan>().transform.position.z > end_distance_float)
-        {
-            StartPVPCycle();
-        }
     }
 }
