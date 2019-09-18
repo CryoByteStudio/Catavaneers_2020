@@ -12,7 +12,7 @@ public class Cycle_Manager : MonoBehaviour
     [SerializeField] private float night_timer_float;
     [SerializeField] public bool is_day;
     [SerializeField] private bool is_night;
-    [SerializeField] private int current_day_int;
+    [SerializeField] public int current_day_int;
     [SerializeField] private int max_day_int;
     [SerializeField] private int wood_count;
     [SerializeField] private bool is_caravan_whole;
@@ -153,6 +153,7 @@ public class Cycle_Manager : MonoBehaviour
     */
     void StartNightCycle()
     {
+
         is_day = false;
         is_night = true;
         is_timer_counting = true;

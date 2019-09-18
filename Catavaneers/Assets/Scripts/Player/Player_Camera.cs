@@ -7,11 +7,15 @@ public class Player_Camera : MonoBehaviour
     //find player in game
 
     public GameObject player_In_Cam;
-    private Cycle_Manager _Cycle_Manager;
 
     [SerializeField]
     private GameObject attach_Pont;
+    public Transform player_tf;
+    private Cycle_Manager _Cycle_Manager;
 
+    [SerializeField]
+    private Transform attach_Pont;
+ 
     [SerializeField]
     private Transform cavarane;
 
@@ -56,14 +60,15 @@ public class Player_Camera : MonoBehaviour
             transform.LookAt(player_In_Cam.transform);
 
         //set the camera on/off based on the caravane postion
-        if (_Cycle_Manager.is_day && _Cycle_Manager.is_PVP != true)
+        if (_Cycle_Manager.is_day)
         {
+            transform_Player_At_Night = true;
             player_Follow_cam.enabled = true;
             Camera_Ui_Follow_OFF.SetActive(false);
             Camera_Ui_Follow_ON.SetActive(true);
             transform_Player_At_Night = true;
         }
-        //else if (player_tf.position.z > (cavarane.position.z + 30) || player_tf.position.z < (cavarane.position.z - 30))
+        //else if (_Cycle_Manager.is_day != true)
         //{
         //    player_Follow_cam.enabled = true;
         //    Camera_Ui_Follow_OFF.SetActive(false);
@@ -76,15 +81,16 @@ public class Player_Camera : MonoBehaviour
             Camera_Ui_Follow_ON.SetActive(false);
         }
 
-        if (_Cycle_Manager.is_day != true && transform_Player_At_Night == true)
+        if (_Cycle_Manager.is_day != true &&  transform_Player_At_Night == true)
         {
             NightStart();
         }
+
     }
 
     public void NightStart()
     {
-        player_In_Cam.transform.position = attach_Pont.transform.position;
+        player_tf.position = attach_Pont.position;
         transform_Player_At_Night = false;
     }
 
