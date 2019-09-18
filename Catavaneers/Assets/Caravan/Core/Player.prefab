@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4294453051551149124}
   - component: {fileID: 4294453051551149127}
   - component: {fileID: 4294453051551149126}
-  - component: {fileID: -2439552489357313636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -151,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e82ce90c25b44cbeb5183d0277291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Place_Part_str: Place_Part_P1
 --- !u!54 &4294453051551149126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,25 +166,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-2439552489357313636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4294453051551149150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa9045bc64bc714298c41622f69d5ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GP: 0
-  wood: 0
-  CaravanPart: 0
-  Trap1: 0
-  Trap2: 0
-  Bandage: 0
-  inventory: 000000000000000000000000000000000000000000000000
 --- !u!1 &4294453051852353313
 GameObject:
   m_ObjectHideFlags: 0
