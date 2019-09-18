@@ -8,13 +8,11 @@ public class Player_Camera : MonoBehaviour
 
     public GameObject player_In_Cam;
 
-    [SerializeField]
-    private GameObject attach_Pont;
     public Transform player_tf;
     private Cycle_Manager _Cycle_Manager;
 
     [SerializeField]
-    private Transform attach_Pont;
+    private Transform attach_point;
  
     [SerializeField]
     private Transform cavarane;
@@ -90,7 +88,7 @@ public class Player_Camera : MonoBehaviour
 
     public void NightStart()
     {
-        player_tf.position = attach_Pont.position;
+        player_tf.position = attach_point.position;
         transform_Player_At_Night = false;
     }
 
