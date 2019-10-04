@@ -556,12 +556,12 @@ PrefabInstance:
         type: 3}
       propertyPath: caravan_attach_point
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 450802107}
     - target: {fileID: 7047496370271661638, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
       propertyPath: caravan_attach_point
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 450802107}
     - target: {fileID: 2450791781993265085, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
       propertyPath: Camera_Ui_Follow_OFF
@@ -587,6 +587,11 @@ PrefabInstance:
       propertyPath: PVP_Move_Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2450791781993265085, guid: 503b549ce50700c4d8fd29004ee02bd5,
+        type: 3}
+      propertyPath: attach_point
+      value: 
+      objectReference: {fileID: 450802107}
     - target: {fileID: 5875666850817190895, guid: 503b549ce50700c4d8fd29004ee02bd5,
         type: 3}
       propertyPath: m_IsActive
@@ -902,6 +907,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1855880211, guid: 796cb3a06dece754cbf0bb96898155c7,
     type: 3}
   m_PrefabInstance: {fileID: 2746154171441630035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &450802107 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3901425084138181214, guid: 212f7f0f9b1df8340a2a41c0f983a1ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105285873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &485648975 stripped
 GameObject:
@@ -1581,7 +1592,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PVP_Attach_Point
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2069968767}
     - target: {fileID: 6538597571298287316, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: Camera_Ui_Follow_OFF
@@ -1597,6 +1608,11 @@ PrefabInstance:
       propertyPath: player_In_Cam
       value: 
       objectReference: {fileID: 1926280164}
+    - target: {fileID: 6538597571298287316, guid: e02ac57714ea64942bf0692cc5c1e35d,
+        type: 3}
+      propertyPath: attach_point
+      value: 
+      objectReference: {fileID: 2069968767}
     - target: {fileID: 1356671411675450065, guid: e02ac57714ea64942bf0692cc5c1e35d,
         type: 3}
       propertyPath: player_active_bl
@@ -1863,7 +1879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98baa1253f016c2478cf57107ae75e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam_tf: {fileID: 963194228}
   caravan_tf: {fileID: 370719085}
   smooth_Factor_float: 0.5
   look_At_Cavaneer: 0
@@ -2690,7 +2705,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PVP_Attach_Point
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1672404004}
     - target: {fileID: 733223953, guid: 1da87dda73fb7874fa6574e278d3bc8a, type: 3}
       propertyPath: knockbackforce
       value: 10
@@ -2720,6 +2735,11 @@ PrefabInstance:
       propertyPath: PVP_Move_Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4240007393801313375, guid: 1da87dda73fb7874fa6574e278d3bc8a,
+        type: 3}
+      propertyPath: attach_point
+      value: 
+      objectReference: {fileID: 1672404004}
     - target: {fileID: 5287210261438398477, guid: 1da87dda73fb7874fa6574e278d3bc8a,
         type: 3}
       propertyPath: m_IsActive
@@ -2927,6 +2947,11 @@ PrefabInstance:
       propertyPath: PVP_Move_Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4705547366101652158, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: attach_point
+      value: 
+      objectReference: {fileID: 1464332778}
     - target: {fileID: 3658347448605806316, guid: 5bfcd31ec246e0648ad44bcee2120600,
         type: 3}
       propertyPath: m_IsActive
@@ -2965,6 +2990,11 @@ PrefabInstance:
     - target: {fileID: 180773858817706821, guid: 5bfcd31ec246e0648ad44bcee2120600,
         type: 3}
       propertyPath: caravan_attach_point
+      value: 
+      objectReference: {fileID: 1464332778}
+    - target: {fileID: 180773858817706821, guid: 5bfcd31ec246e0648ad44bcee2120600,
+        type: 3}
+      propertyPath: PVP_Attach_Point
       value: 
       objectReference: {fileID: 1464332778}
     m_RemovedComponents: []
